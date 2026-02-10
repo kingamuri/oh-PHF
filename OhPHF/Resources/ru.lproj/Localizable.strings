@@ -1,0 +1,303 @@
+// MARK: - Common UI
+"yes" = "Да";
+"no" = "Нет";
+"back" = "Назад";
+"next" = "Далее";
+"submit" = "Отправить";
+"submitting" = "Отправка...";
+"save" = "Сохранить";
+"cancel" = "Отмена";
+"delete" = "Удалить";
+"share" = "Поделиться";
+
+// MARK: - Welcome
+"welcome.title" = "Добро пожаловать";
+"welcome.patientNumber" = "Номер пациента";
+"welcome.patientNumberPlaceholder" = "Введите номер пациента";
+"welcome.start" = "Начать анкету";
+
+// MARK: - Personal Info
+"personal.title" = "Личные данные";
+"personal.nameSection" = "Имя и пол";
+"personal.title.Mr" = "Г-н";
+"personal.title.Mrs" = "Г-жа";
+"personal.title.Diverse" = "Другое";
+"personal.title.Child" = "Ребёнок";
+"personal.firstName" = "Имя";
+"personal.lastName" = "Фамилия";
+"personal.dateOfBirth" = "Дата рождения";
+"personal.gender" = "Пол";
+"personal.gender.Male" = "Мужской";
+"personal.gender.Female" = "Женский";
+"personal.gender.Diverse" = "Другой";
+"personal.addressSection" = "Адрес";
+"personal.street" = "Улица";
+"personal.postalCode" = "Почтовый индекс";
+"personal.city" = "Город";
+"personal.country" = "Страна";
+"personal.contactSection" = "Контактные данные";
+"personal.phone" = "Телефон";
+"personal.email" = "Электронная почта";
+"personal.insuranceSection" = "Страхование";
+"personal.insuranceType" = "Тип страхования";
+"personal.insurance.Public" = "Государственное";
+"personal.insurance.Private" = "Частное";
+"personal.insurance.SelfPay" = "Самоплата";
+"personal.insurance.Other" = "Другое";
+"personal.insuranceName" = "Название страховой компании";
+"personal.professionSection" = "Профессия";
+"personal.profession" = "Профессия";
+"personal.emergencySection" = "Контакт для экстренной связи";
+"personal.emergencyName" = "Имя контактного лица";
+"personal.emergencyPhone" = "Телефон контактного лица";
+
+// MARK: - Medications
+"medications.title" = "Медикаменты";
+"medications.underTreatment" = "Находитесь ли вы на лечении у врача?";
+"medications.doctorName" = "Имя лечащего врача";
+"medications.treatmentReason" = "Причина лечения";
+"medications.takingMedications" = "Принимаете ли вы лекарства?";
+"medications.listLabel" = "Перечислите ваши лекарства:";
+"medications.bloodThinners" = "Принимаете ли вы препараты для разжижения крови?";
+"medications.bloodThinnerType" = "Тип препарата";
+"medications.thinner.Aspirin" = "Аспирин";
+"medications.thinner.Marcumar" = "Маркумар";
+"medications.thinner.Xarelto" = "Ксарелто";
+"medications.thinner.Eliquis" = "Эликвис";
+"medications.thinner.Pradaxa" = "Прадакса";
+"medications.thinner.Heparin" = "Гепарин";
+"medications.thinner.Clopidogrel" = "Клопидогрел";
+"medications.thinner.Other" = "Другой";
+
+// MARK: - Allergies
+"allergies.title" = "Аллергии";
+"allergies.hasAllergies" = "Есть ли у вас аллергии?";
+"allergies.selectTypes" = "Выберите соответствующие аллергии:";
+"allergies.otherPlaceholder" = "Опишите другие аллергии...";
+"allergies.type.Penicillin" = "Пенициллин";
+"allergies.type.LocalAnesthetics" = "Местные анестетики";
+"allergies.type.Latex" = "Латекс";
+"allergies.type.Iodine" = "Йод";
+"allergies.type.NSAIDs" = "НПВС (напр. Ибупрофен)";
+"allergies.type.Metals" = "Металлы";
+"allergies.type.Other" = "Другое";
+
+// MARK: - Medical Conditions
+"conditions.title" = "Заболевания";
+"conditions.subtitle" = "Укажите, есть ли у вас или были следующие заболевания.";
+"conditions.detailsPlaceholder" = "Дополнительная информация...";
+"conditions.cardiovascular" = "Сердечно-сосудистые заболевания";
+"conditions.cardiovascular.hypertension" = "Высокое давление (гипертония)";
+"conditions.cardiovascular.hypotension" = "Низкое давление (гипотония)";
+"conditions.cardiovascular.heartAttack" = "Инфаркт миокарда";
+"conditions.cardiovascular.angina" = "Стенокардия";
+"conditions.cardiovascular.heartFailure" = "Сердечная недостаточность";
+"conditions.cardiovascular.valveDisease" = "Заболевание клапанов сердца";
+"conditions.cardiovascular.arrhythmia" = "Аритмия";
+"conditions.cardiovascular.stroke" = "Инсульт";
+"conditions.pacemaker" = "Кардиостимулятор / Дефибриллятор";
+"conditions.bloodDisorders" = "Заболевания крови";
+"conditions.bloodDisorders.anemia" = "Анемия";
+"conditions.bloodDisorders.hemophilia" = "Гемофилия";
+"conditions.bloodDisorders.thrombosis" = "Тромбоз";
+"conditions.diabetes" = "Диабет";
+"conditions.diabetes.type1" = "Тип 1";
+"conditions.diabetes.type2" = "Тип 2";
+"conditions.respiratory" = "Заболевания дыхательных путей";
+"conditions.respiratory.asthma" = "Астма";
+"conditions.respiratory.copd" = "ХОБЛ";
+"conditions.respiratory.sleepApnea" = "Апноэ сна";
+"conditions.epilepsy" = "Эпилепсия / Судороги";
+"conditions.infectiousDiseases" = "Инфекционные заболевания";
+"conditions.infectiousDiseases.hiv" = "ВИЧ/СПИД";
+"conditions.infectiousDiseases.hepatitisB" = "Гепатит B";
+"conditions.infectiousDiseases.hepatitisC" = "Гепатит C";
+"conditions.infectiousDiseases.tuberculosis" = "Туберкулёз";
+"conditions.infectiousDiseases.other" = "Другое";
+"conditions.liverDisease" = "Заболевание печени";
+"conditions.kidneyDisease" = "Заболевание почек";
+"conditions.thyroidDisorders" = "Заболевание щитовидной железы";
+"conditions.osteoporosis" = "Остеопороз";
+"conditions.osteoporosis.alendronate" = "Алендронат (Fosamax)";
+"conditions.osteoporosis.zoledronicAcid" = "Золедроновая кислота (Zometa)";
+"conditions.osteoporosis.denosumab" = "Деносумаб (Prolia)";
+"conditions.osteoporosis.other" = "Другое";
+"conditions.autoimmune" = "Аутоиммунное заболевание";
+"conditions.headNeckRadiation" = "Облучение области головы/шеи";
+"conditions.chemotherapy" = "Химиотерапия (текущая/прошлая)";
+"conditions.otherConditions" = "Другие заболевания";
+
+// MARK: - Women's Health
+"womensHealth.title" = "Женское здоровье";
+"womensHealth.subtitle" = "Эта информация важна для вашего стоматологического лечения.";
+"womensHealth.pregnant" = "Вы беременны?";
+"womensHealth.trimester" = "Триместр";
+"womensHealth.trimester.first" = "1-й триместр";
+"womensHealth.trimester.second" = "2-й триместр";
+"womensHealth.trimester.third" = "3-й триместр";
+"womensHealth.breastfeeding" = "Кормите ли вы грудью?";
+"womensHealth.contraceptives" = "Принимаете ли вы оральные контрацептивы?";
+"womensHealth.contraceptiveType" = "Тип контрацептива";
+"womensHealth.contraceptiveTypePlaceholder" = "Введите название препарата...";
+
+// MARK: - Lifestyle
+"lifestyle.title" = "Образ жизни";
+"lifestyle.subtitle" = "Ваши ответы помогут нам подобрать лечение индивидуально.";
+"lifestyle.smoking" = "Вы курите?";
+"lifestyle.smokingAmount" = "Сколько сигарет в день?";
+"lifestyle.alcohol" = "Употребление алкоголя";
+"lifestyle.alcohol.never" = "Никогда";
+"lifestyle.alcohol.occasionally" = "Иногда";
+"lifestyle.alcohol.regularly" = "Регулярно";
+"lifestyle.alcohol.daily" = "Ежедневно";
+"lifestyle.bruxism" = "Скрипите ли вы зубами или стискиваете их?";
+"lifestyle.nightguard" = "Носите ли вы ночную капу?";
+
+// MARK: - Dental History
+"dental.title" = "Стоматологический анамнез";
+"dental.visitReasonSection" = "Причина визита";
+"dental.visitReason" = "Причина визита";
+"dental.visitReason.select" = "Выберите...";
+"dental.visitReason.Checkup" = "Осмотр";
+"dental.visitReason.Pain" = "Боль";
+"dental.visitReason.Aesthetic" = "Эстетическое лечение";
+"dental.visitReason.Implant" = "Имплантация";
+"dental.visitReason.BracesStrightening" = "Брекеты / Выравнивание";
+"dental.visitReason.Continuation" = "Продолжение лечения";
+"dental.visitReason.Other" = "Другое";
+"dental.aestheticType" = "Тип эстетического лечения";
+"dental.aestheticType.select" = "Выберите...";
+"dental.aestheticType.Veneers" = "Виниры";
+"dental.aestheticType.VeneerRevision" = "Коррекция виниров";
+"dental.aestheticType.CompositeBonding" = "Композитный бондинг";
+"dental.aestheticType.PrintedVeneers" = "3D-печатные виниры";
+"dental.aestheticType.SmileMakeover" = "Преображение улыбки";
+"dental.lastVisitSection" = "Последний визит к стоматологу";
+"dental.lastVisit" = "Когда вы в последний раз были у стоматолога?";
+"dental.lastVisit.select" = "Выберите...";
+"dental.lastVisit.LessThan6Months" = "Менее 6 месяцев назад";
+"dental.lastVisit.6To12Months" = "6-12 месяцев назад";
+"dental.lastVisit.1To2Years" = "1-2 года назад";
+"dental.lastVisit.MoreThan2Years" = "Более 2 лет назад";
+"dental.lastVisit.Never" = "Никогда";
+"dental.bleedingGums" = "Кровоточат ли дёсны при чистке?";
+"dental.hasTMJ" = "Есть ли у вас проблемы с челюстным суставом?";
+"dental.tmjSymptoms" = "Симптомы:";
+"dental.tmj.Clicking" = "Щелчки";
+"dental.tmj.Pain" = "Боль";
+"dental.tmj.LimitedOpening" = "Ограниченное открывание";
+"dental.tmj.Locking" = "Блокировка челюсти";
+"dental.hadDentalSurgery" = "Были ли у вас стоматологические операции?";
+"dental.hadAnesthesiaComplications" = "Были ли осложнения при анестезии?";
+"dental.anesthesiaDetails" = "Подробности осложнений...";
+"dental.anxietyLevel" = "Уровень стоматологической тревоги";
+"dental.anxiety.None" = "Нет";
+"dental.anxiety.Mild" = "Лёгкая";
+"dental.anxiety.Moderate" = "Умеренная";
+"dental.anxiety.Severe" = "Сильная";
+
+// MARK: - BDD Screener
+"bdd.title" = "Анкета самовосприятия";
+"bdd.q1" = "Насколько вы довольны внешним видом ваших зубов?";
+"bdd.q1.a0" = "Очень доволен";
+"bdd.q1.a1" = "Доволен";
+"bdd.q1.a2" = "Недоволен";
+"bdd.q1.a3" = "Очень недоволен";
+"bdd.q2" = "Как часто вы думаете о внешнем виде ваших зубов?";
+"bdd.q2.a0" = "Редко";
+"bdd.q2.a1" = "Иногда";
+"bdd.q2.a2" = "Часто";
+"bdd.q2.a3" = "Постоянно";
+"bdd.q3" = "Избегаете ли вы улыбаться в обществе?";
+"bdd.q3.a0" = "Никогда";
+"bdd.q3.a1" = "Редко";
+"bdd.q3.a2" = "Иногда";
+"bdd.q3.a3" = "Всегда";
+"bdd.q4" = "Влияет ли внешний вид зубов на вашу уверенность в себе?";
+"bdd.q4.a0" = "Нет";
+"bdd.q4.a1" = "Немного";
+"bdd.q4.a2" = "Умеренно";
+"bdd.q4.a3" = "Сильно";
+"bdd.q5" = "Сравниваете ли вы свои зубы с зубами других людей?";
+"bdd.q5.a0" = "Никогда";
+"bdd.q5.a1" = "Редко";
+"bdd.q5.a2" = "Часто";
+"bdd.q5.a3" = "Постоянно";
+"bdd.q6" = "Как сильно внешний вид зубов влияет на вашу повседневную жизнь?";
+"bdd.q6.a0" = "Не влияет";
+"bdd.q6.a1" = "Немного";
+"bdd.q6.a2" = "Умеренно";
+"bdd.q6.a3" = "Сильно";
+"bdd.q7" = "Насколько реалистичны ваши ожидания от результата лечения?";
+"bdd.q7.a0" = "Очень реалистичны";
+"bdd.q7.a1" = "Реалистичны";
+"bdd.q7.a2" = "Скорее нереалистичны";
+"bdd.q7.a3" = "Нереалистичны";
+
+// MARK: - Consent
+"consent.title" = "Согласия";
+"consent.submitting" = "Обработка...";
+"consent.privacyTitle" = "Уведомление о конфиденциальности";
+"consent.privacyNotice" = "Контролёр данных — стоматологическая клиника, указанная в настройках. Ваши персональные данные, включая данные о здоровье, собираются и обрабатываются для целей стоматологического лечения, выставления счетов и связи с зуботехническими лабораториями.
+
+Правовая основа: ст. 6(1)(b) и ст. 9(2)(h) GDPR; § 19 Закона о стоматологии Австрии (ZAG).
+
+Получатели: зуботехнические лаборатории, страховые компании, специалисты (при направлении).
+
+Срок хранения: ваши данные хранятся не менее 10 лет (§ 19(3) ZAG).
+
+Ваши права: вы имеете право на доступ, исправление, удаление, ограничение обработки, перенос данных и возражение. Жалобы можно направлять в Австрийское управление по защите данных (dsb.gv.at).";
+"consent.mandatoryTitle" = "Обязательные согласия";
+"consent.gdpr" = "Я даю согласие на обработку моих персональных данных и данных о здоровье для целей стоматологического лечения, выставления счетов и связи с лабораториями в соответствии с GDPR.";
+"consent.driving" = "Мне известно, что после лечения под местной анестезией или седацией моя способность управлять транспортным средством может быть нарушена. В таких случаях я не буду управлять транспортом.";
+"consent.missedAppointment" = "Я принимаю к сведению, что за пропущенные приёмы без своевременной отмены (минимум за 24 часа) взимается плата в размере €%d.";
+"consent.photoTitle" = "Согласие на фотографии (необязательно)";
+"consent.photoNote" = "Согласие является добровольным и не влияет на качество лечения. Вы можете отозвать согласие в любое время.";
+"consent.photosInternal" = "Я даю согласие на съёмку и хранение фотографий для внутренней стоматологической документации.";
+"consent.photosResearch" = "Я даю согласие на использование анонимизированных фотографий в научных публикациях и исследованиях.";
+"consent.photosMarketing" = "Я даю согласие на использование анонимизированных фотографий на сайте, в социальных сетях и в маркетинговых целях клиники.";
+"consent.signatureTitle" = "Подпись";
+"consent.date" = "Дата";
+
+// MARK: - Signature Pad
+"signature" = "Подпись";
+"signature_instruction" = "Пожалуйста, подпишите здесь пальцем или Apple Pencil";
+"clear" = "Очистить";
+
+// MARK: - PIN Entry
+"enter_staff_pin" = "Введите PIN персонала";
+"incorrect_pin" = "Неверный PIN";
+
+// MARK: - Settings
+"settings_title" = "Настройки";
+"clinic_information" = "Информация о клинике";
+"clinic_name" = "Название клиники";
+"subtitle" = "Подзаголовок";
+"street" = "Улица";
+"postal_code" = "Почтовый индекс";
+"city" = "Город";
+"country" = "Страна";
+"website" = "Веб-сайт";
+"email" = "Электронная почта";
+"logo" = "Логотип";
+"select_logo" = "Выбрать логотип";
+"change_logo" = "Изменить логотип";
+"remove_logo" = "Удалить логотип";
+"fees" = "Сборы";
+"missed_appointment_fee" = "Плата за пропущенный приём";
+"security" = "Безопасность";
+"staff_pin" = "PIN персонала";
+"pin_footer" = "PIN необходим для доступа к настройкам.";
+"pdf_archive" = "Архив PDF";
+"no_pdfs" = "Нет PDF";
+"no_pdfs_description" = "Отправленные формы будут отображаться здесь.";
+"delete_pdf" = "Удалить PDF?";
+"delete_pdf_message" = "Вы уверены, что хотите удалить этот PDF? Это действие нельзя отменить.";
+
+// MARK: - Validation
+"validation.firstNameRequired" = "Укажите имя.";
+"validation.lastNameRequired" = "Укажите фамилию.";
+"validation.gdprRequired" = "Необходимо согласие GDPR.";
+"validation.drivingRequired" = "Необходимо подтверждение о вождении.";
+"validation.missedAppointmentRequired" = "Необходимо подтверждение о пропущенных приёмах.";
+"validation.signatureRequired" = "Необходима подпись.";

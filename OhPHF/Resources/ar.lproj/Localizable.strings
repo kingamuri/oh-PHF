@@ -1,0 +1,295 @@
+// MARK: - Common UI
+"yes" = "نعم";
+"no" = "لا";
+"back" = "رجوع";
+"next" = "التالي";
+"submit" = "إرسال";
+"submitting" = "جارٍ الإرسال...";
+"save" = "حفظ";
+"cancel" = "إلغاء";
+"delete" = "حذف";
+"share" = "مشاركة";
+
+// MARK: - Welcome
+"welcome.title" = "مرحباً";
+"welcome.patientNumber" = "رقم المريض";
+"welcome.patientNumberPlaceholder" = "أدخل رقم المريض";
+"welcome.start" = "بدء الاستبيان";
+
+// MARK: - Personal Info
+"personal.title" = "البيانات الشخصية";
+"personal.nameSection" = "الاسم والجنس";
+"personal.title.Mr" = "السيد";
+"personal.title.Mrs" = "السيدة";
+"personal.title.Diverse" = "متنوع";
+"personal.title.Child" = "طفل";
+"personal.firstName" = "الاسم الأول";
+"personal.lastName" = "اسم العائلة";
+"personal.dateOfBirth" = "تاريخ الميلاد";
+"personal.gender" = "الجنس";
+"personal.gender.Male" = "ذكر";
+"personal.gender.Female" = "أنثى";
+"personal.gender.Diverse" = "متنوع";
+"personal.addressSection" = "العنوان";
+"personal.street" = "الشارع";
+"personal.postalCode" = "الرمز البريدي";
+"personal.city" = "المدينة";
+"personal.country" = "البلد";
+"personal.contactSection" = "معلومات الاتصال";
+"personal.phone" = "الهاتف";
+"personal.email" = "البريد الإلكتروني";
+"personal.insuranceSection" = "التأمين";
+"personal.insuranceType" = "نوع التأمين";
+"personal.insurance.Public" = "عام";
+"personal.insurance.Private" = "خاص";
+"personal.insurance.SelfPay" = "دفع ذاتي";
+"personal.insurance.Other" = "أخرى";
+"personal.insuranceName" = "اسم شركة التأمين";
+"personal.professionSection" = "المهنة";
+"personal.profession" = "المهنة";
+"personal.emergencySection" = "جهة اتصال الطوارئ";
+"personal.emergencyName" = "اسم جهة اتصال الطوارئ";
+"personal.emergencyPhone" = "هاتف جهة اتصال الطوارئ";
+
+// MARK: - Medications
+"medications.title" = "الأدوية";
+"medications.underTreatment" = "هل تخضع حالياً لعلاج طبي؟";
+"medications.doctorName" = "اسم الطبيب المعالج";
+"medications.treatmentReason" = "سبب العلاج";
+"medications.takingMedications" = "هل تتناول أدوية حالياً؟";
+"medications.listLabel" = "يرجى إدراج أدويتك:";
+"medications.bloodThinners" = "هل تتناول مميعات الدم؟";
+"medications.bloodThinnerType" = "نوع مميع الدم";
+"medications.thinner.Aspirin" = "أسبرين";
+"medications.thinner.Marcumar" = "ماركومار";
+"medications.thinner.Xarelto" = "زاريلتو";
+"medications.thinner.Eliquis" = "إليكويس";
+"medications.thinner.Pradaxa" = "براداكسا";
+"medications.thinner.Heparin" = "هيبارين";
+"medications.thinner.Clopidogrel" = "كلوبيدوغريل";
+"medications.thinner.Other" = "أخرى";
+
+// MARK: - Allergies
+"allergies.title" = "الحساسية";
+"allergies.hasAllergies" = "هل لديك أي حساسية؟";
+"allergies.selectTypes" = "يرجى اختيار أنواع الحساسية:";
+"allergies.otherPlaceholder" = "وصف حساسية أخرى...";
+"allergies.type.Penicillin" = "البنسلين";
+"allergies.type.LocalAnesthetics" = "التخدير الموضعي";
+"allergies.type.Latex" = "اللاتكس";
+"allergies.type.Iodine" = "اليود";
+"allergies.type.NSAIDs" = "مضادات الالتهاب (مثل إيبوبروفين)";
+"allergies.type.Metals" = "المعادن";
+"allergies.type.Other" = "أخرى";
+
+// MARK: - Medical Conditions
+"conditions.title" = "الأمراض السابقة";
+"conditions.subtitle" = "يرجى الإشارة إلى ما إذا كنت تعاني أو عانيت من أي من الأمراض التالية.";
+"conditions.detailsPlaceholder" = "تفاصيل إضافية...";
+"conditions.cardiovascular" = "أمراض القلب والأوعية الدموية";
+"conditions.cardiovascular.hypertension" = "ارتفاع ضغط الدم";
+"conditions.cardiovascular.hypotension" = "انخفاض ضغط الدم";
+"conditions.cardiovascular.heartAttack" = "نوبة قلبية";
+"conditions.cardiovascular.angina" = "الذبحة الصدرية";
+"conditions.cardiovascular.heartFailure" = "قصور القلب";
+"conditions.cardiovascular.valveDisease" = "أمراض صمامات القلب";
+"conditions.cardiovascular.arrhythmia" = "اضطراب نظم القلب";
+"conditions.cardiovascular.stroke" = "سكتة دماغية";
+"conditions.pacemaker" = "جهاز تنظيم ضربات القلب / مزيل الرجفان";
+"conditions.bloodDisorders" = "أمراض الدم";
+"conditions.bloodDisorders.anemia" = "فقر الدم";
+"conditions.bloodDisorders.hemophilia" = "الهيموفيليا (نزف الدم)";
+"conditions.bloodDisorders.thrombosis" = "تجلط الدم";
+"conditions.diabetes" = "السكري";
+"conditions.diabetes.type1" = "النوع الأول";
+"conditions.diabetes.type2" = "النوع الثاني";
+"conditions.respiratory" = "أمراض الجهاز التنفسي";
+"conditions.respiratory.asthma" = "الربو";
+"conditions.respiratory.copd" = "مرض الانسداد الرئوي المزمن";
+"conditions.respiratory.sleepApnea" = "انقطاع النفس أثناء النوم";
+"conditions.epilepsy" = "الصرع / النوبات";
+"conditions.infectiousDiseases" = "الأمراض المعدية";
+"conditions.infectiousDiseases.hiv" = "فيروس نقص المناعة / الإيدز";
+"conditions.infectiousDiseases.hepatitisB" = "التهاب الكبد ب";
+"conditions.infectiousDiseases.hepatitisC" = "التهاب الكبد ج";
+"conditions.infectiousDiseases.tuberculosis" = "السل";
+"conditions.infectiousDiseases.other" = "أخرى";
+"conditions.liverDisease" = "أمراض الكبد";
+"conditions.kidneyDisease" = "أمراض الكلى";
+"conditions.thyroidDisorders" = "اضطرابات الغدة الدرقية";
+"conditions.osteoporosis" = "هشاشة العظام";
+"conditions.osteoporosis.alendronate" = "أليندرونات (فوساماكس)";
+"conditions.osteoporosis.zoledronicAcid" = "حمض الزوليدرونيك (زوميتا)";
+"conditions.osteoporosis.denosumab" = "دينوسوماب (بروليا)";
+"conditions.osteoporosis.other" = "أخرى";
+"conditions.autoimmune" = "أمراض المناعة الذاتية";
+"conditions.headNeckRadiation" = "إشعاع في منطقة الرأس/الرقبة";
+"conditions.chemotherapy" = "العلاج الكيميائي (حالي/سابق)";
+"conditions.otherConditions" = "أمراض أخرى";
+
+// MARK: - Women's Health
+"womensHealth.title" = "صحة المرأة";
+"womensHealth.subtitle" = "هذه المعلومات مهمة لعلاج الأسنان الخاص بك.";
+"womensHealth.pregnant" = "هل أنتِ حامل؟";
+"womensHealth.trimester" = "الثلث";
+"womensHealth.trimester.first" = "الثلث الأول";
+"womensHealth.trimester.second" = "الثلث الثاني";
+"womensHealth.trimester.third" = "الثلث الثالث";
+"womensHealth.breastfeeding" = "هل ترضعين طبيعياً حالياً؟";
+"womensHealth.contraceptives" = "هل تتناولين حبوب منع الحمل؟";
+"womensHealth.contraceptiveType" = "نوع وسيلة منع الحمل";
+"womensHealth.contraceptiveTypePlaceholder" = "أدخل اسم الدواء...";
+
+// MARK: - Lifestyle
+"lifestyle.title" = "نمط الحياة";
+"lifestyle.subtitle" = "إجاباتك تساعدنا في تخصيص علاجك.";
+"lifestyle.smoking" = "هل تدخن؟";
+"lifestyle.smokingAmount" = "كم سيجارة في اليوم؟";
+"lifestyle.alcohol" = "استهلاك الكحول";
+"lifestyle.alcohol.never" = "أبداً";
+"lifestyle.alcohol.occasionally" = "أحياناً";
+"lifestyle.alcohol.regularly" = "بانتظام";
+"lifestyle.alcohol.daily" = "يومياً";
+"lifestyle.bruxism" = "هل تطحن أسنانك أو تضغط عليها؟";
+"lifestyle.nightguard" = "هل تستخدم واقي الأسنان الليلي؟";
+
+// MARK: - Dental History
+"dental.title" = "التاريخ السني";
+"dental.visitReasonSection" = "سبب الزيارة";
+"dental.visitReason" = "سبب الزيارة";
+"dental.visitReason.select" = "يرجى الاختيار...";
+"dental.visitReason.Checkup" = "فحص دوري";
+"dental.visitReason.Pain" = "ألم";
+"dental.visitReason.Aesthetic" = "علاج تجميلي";
+"dental.visitReason.Implant" = "زراعة أسنان";
+"dental.visitReason.BracesStrightening" = "تقويم الأسنان";
+"dental.visitReason.Continuation" = "متابعة العلاج";
+"dental.visitReason.Other" = "أخرى";
+"dental.aestheticType" = "نوع العلاج التجميلي";
+"dental.aestheticType.select" = "يرجى الاختيار...";
+"dental.aestheticType.Veneers" = "قشور الأسنان";
+"dental.aestheticType.VeneerRevision" = "تعديل القشور";
+"dental.aestheticType.CompositeBonding" = "حشوات تجميلية";
+"dental.aestheticType.PrintedVeneers" = "قشور مطبوعة ثلاثية الأبعاد";
+"dental.aestheticType.SmileMakeover" = "تجميل الابتسامة";
+"dental.lastVisitSection" = "آخر زيارة لطبيب الأسنان";
+"dental.lastVisit" = "متى كانت آخر زيارة لطبيب الأسنان؟";
+"dental.lastVisit.select" = "يرجى الاختيار...";
+"dental.lastVisit.LessThan6Months" = "أقل من ٦ أشهر";
+"dental.lastVisit.6To12Months" = "٦-١٢ شهراً";
+"dental.lastVisit.1To2Years" = "١-٢ سنة";
+"dental.lastVisit.MoreThan2Years" = "أكثر من سنتين";
+"dental.lastVisit.Never" = "أبداً";
+"dental.bleedingGums" = "هل تنزف لثتك عند التنظيف؟";
+"dental.hasTMJ" = "هل تعاني من مشاكل في مفصل الفك؟";
+"dental.tmjSymptoms" = "الأعراض:";
+"dental.tmj.Clicking" = "طقطقة";
+"dental.tmj.Pain" = "ألم";
+"dental.tmj.LimitedOpening" = "صعوبة في فتح الفم";
+"dental.tmj.Locking" = "انغلاق الفك";
+"dental.hadDentalSurgery" = "هل خضعت لجراحة أسنان سابقاً؟";
+"dental.hadAnesthesiaComplications" = "هل حدثت مضاعفات من التخدير؟";
+"dental.anesthesiaDetails" = "تفاصيل المضاعفات...";
+"dental.anxietyLevel" = "مستوى القلق من علاج الأسنان";
+"dental.anxiety.None" = "لا يوجد";
+"dental.anxiety.Mild" = "خفيف";
+"dental.anxiety.Moderate" = "متوسط";
+"dental.anxiety.Severe" = "شديد";
+
+// MARK: - BDD Screener
+"bdd.title" = "استبيان الإدراك الذاتي";
+"bdd.q1" = "ما مدى رضاك عن مظهر أسنانك؟";
+"bdd.q1.a0" = "راضٍ جداً";
+"bdd.q1.a1" = "راضٍ";
+"bdd.q1.a2" = "غير راضٍ";
+"bdd.q1.a3" = "غير راضٍ إطلاقاً";
+"bdd.q2" = "كم مرة تفكر في مظهر أسنانك؟";
+"bdd.q2.a0" = "نادراً";
+"bdd.q2.a1" = "أحياناً";
+"bdd.q2.a2" = "كثيراً";
+"bdd.q2.a3" = "باستمرار";
+"bdd.q3" = "هل تتجنب الابتسام في المواقف الاجتماعية؟";
+"bdd.q3.a0" = "أبداً";
+"bdd.q3.a1" = "نادراً";
+"bdd.q3.a2" = "أحياناً";
+"bdd.q3.a3" = "دائماً";
+"bdd.q4" = "هل يؤثر مظهر أسنانك على ثقتك بنفسك؟";
+"bdd.q4.a0" = "لا إطلاقاً";
+"bdd.q4.a1" = "قليلاً";
+"bdd.q4.a2" = "بشكل معتدل";
+"bdd.q4.a3" = "بشكل كبير";
+"bdd.q5" = "هل تقارن أسنانك بأسنان الآخرين؟";
+"bdd.q5.a0" = "أبداً";
+"bdd.q5.a1" = "نادراً";
+"bdd.q5.a2" = "كثيراً";
+"bdd.q5.a3" = "باستمرار";
+"bdd.q6" = "ما مدى تأثير مظهر أسنانك على حياتك اليومية؟";
+"bdd.q6.a0" = "لا يؤثر";
+"bdd.q6.a1" = "قليلاً";
+"bdd.q6.a2" = "بشكل معتدل";
+"bdd.q6.a3" = "بشكل كبير";
+"bdd.q7" = "ما مدى واقعية توقعاتك لنتيجة العلاج؟";
+"bdd.q7.a0" = "واقعية جداً";
+"bdd.q7.a1" = "واقعية";
+"bdd.q7.a2" = "غير واقعية إلى حد ما";
+"bdd.q7.a3" = "غير واقعية";
+
+// MARK: - Consent
+"consent.title" = "الموافقات";
+"consent.submitting" = "جارٍ المعالجة...";
+"consent.privacyTitle" = "إشعار الخصوصية";
+"consent.privacyNotice" = "المسؤول عن معالجة بياناتك هو عيادة الأسنان المحددة في الإعدادات. يتم جمع ومعالجة بياناتك الشخصية بما في ذلك البيانات الصحية لأغراض علاج الأسنان والفوترة والتواصل مع مختبرات الأسنان.\n\nالأساس القانوني: المادة 6(1)(ب) والمادة 9(2)(ح) من اللائحة العامة لحماية البيانات (GDPR)؛ المادة 19 من قانون طب الأسنان النمساوي (ZAG).\n\nالمستلمون: مختبرات الأسنان، شركات التأمين، الأطباء المتخصصون (في حالة الإحالة).\n\nفترة الاحتفاظ: يتم الاحتفاظ ببياناتك لمدة 10 سنوات على الأقل (المادة 19(3) ZAG).\n\nحقوقك: لديك الحق في الوصول والتصحيح والحذف وتقييد المعالجة ونقل البيانات والاعتراض. يمكن توجيه الشكاوى إلى هيئة حماية البيانات النمساوية (dsb.gv.at).";
+"consent.mandatoryTitle" = "الموافقات الإلزامية";
+"consent.gdpr" = "أوافق على معالجة بياناتي الشخصية وبياناتي الصحية لأغراض علاج الأسنان والفوترة والتواصل مع المختبرات وفقاً للائحة العامة لحماية البيانات.";
+"consent.driving" = "أدرك أنه بعد العلاج بالتخدير الموضعي أو التسكين قد تتأثر قدرتي على القيادة. لن أقود السيارة في هذه الحالة.";
+"consent.missedAppointment" = "أقر بأنه سيتم فرض رسوم قدرها %d€ على المواعيد الفائتة دون إلغاء مسبق (قبل 24 ساعة على الأقل).";
+"consent.photoTitle" = "الموافقة على التصوير (اختياري)";
+"consent.photoNote" = "الموافقة طوعية ولا تؤثر على جودة العلاج. يمكنك سحب موافقتك في أي وقت.";
+"consent.photosInternal" = "أوافق على التقاط وتخزين الصور للتوثيق السني الداخلي.";
+"consent.photosResearch" = "أوافق على استخدام صور مجهولة الهوية في المنشورات العلمية والأبحاث.";
+"consent.photosMarketing" = "أوافق على استخدام صور مجهولة الهوية على موقع العيادة ووسائل التواصل الاجتماعي والتسويق.";
+"consent.signatureTitle" = "التوقيع";
+"consent.date" = "التاريخ";
+
+// MARK: - Signature Pad
+"signature" = "التوقيع";
+"signature_instruction" = "يرجى التوقيع هنا باستخدام إصبعك أو Apple Pencil";
+"clear" = "مسح";
+
+// MARK: - PIN Entry
+"enter_staff_pin" = "أدخل رمز PIN للموظفين";
+"incorrect_pin" = "رمز PIN غير صحيح";
+
+// MARK: - Settings
+"settings_title" = "الإعدادات";
+"clinic_information" = "معلومات العيادة";
+"clinic_name" = "اسم العيادة";
+"subtitle" = "العنوان الفرعي";
+"street" = "الشارع";
+"postal_code" = "الرمز البريدي";
+"city" = "المدينة";
+"country" = "البلد";
+"website" = "الموقع الإلكتروني";
+"email" = "البريد الإلكتروني";
+"logo" = "الشعار";
+"select_logo" = "اختيار شعار";
+"change_logo" = "تغيير الشعار";
+"remove_logo" = "إزالة الشعار";
+"fees" = "الرسوم";
+"missed_appointment_fee" = "رسوم الموعد الفائت";
+"security" = "الأمان";
+"staff_pin" = "رمز PIN للموظفين";
+"pin_footer" = "رمز PIN مطلوب للوصول إلى الإعدادات.";
+"pdf_archive" = "أرشيف PDF";
+"no_pdfs" = "لا توجد ملفات PDF";
+"no_pdfs_description" = "ستظهر النماذج المقدمة هنا.";
+"delete_pdf" = "حذف PDF؟";
+"delete_pdf_message" = "هل أنت متأكد من حذف ملف PDF هذا؟ لا يمكن التراجع عن هذا الإجراء.";
+
+// MARK: - Validation
+"validation.firstNameRequired" = "الاسم الأول مطلوب.";
+"validation.lastNameRequired" = "اسم العائلة مطلوب.";
+"validation.gdprRequired" = "موافقة حماية البيانات مطلوبة.";
+"validation.drivingRequired" = "الإقرار بشأن القيادة مطلوب.";
+"validation.missedAppointmentRequired" = "الإقرار بشأن المواعيد الفائتة مطلوب.";
+"validation.signatureRequired" = "التوقيع مطلوب.";

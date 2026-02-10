@@ -1,0 +1,303 @@
+// MARK: - Common UI
+"yes" = "Yes";
+"no" = "No";
+"back" = "Back";
+"next" = "Next";
+"submit" = "Submit";
+"submitting" = "Submitting...";
+"save" = "Save";
+"cancel" = "Cancel";
+"delete" = "Delete";
+"share" = "Share";
+
+// MARK: - Welcome
+"welcome.title" = "Welcome";
+"welcome.patientNumber" = "Patient Number";
+"welcome.patientNumberPlaceholder" = "Enter patient number";
+"welcome.start" = "Start Questionnaire";
+
+// MARK: - Personal Info
+"personal.title" = "Personal Information";
+"personal.nameSection" = "Name & Gender";
+"personal.title.Mr" = "Mr";
+"personal.title.Mrs" = "Mrs";
+"personal.title.Diverse" = "Diverse";
+"personal.title.Child" = "Child";
+"personal.firstName" = "First Name";
+"personal.lastName" = "Last Name";
+"personal.dateOfBirth" = "Date of Birth";
+"personal.gender" = "Gender";
+"personal.gender.Male" = "Male";
+"personal.gender.Female" = "Female";
+"personal.gender.Diverse" = "Diverse";
+"personal.addressSection" = "Address";
+"personal.street" = "Street";
+"personal.postalCode" = "Postal Code";
+"personal.city" = "City";
+"personal.country" = "Country";
+"personal.contactSection" = "Contact Information";
+"personal.phone" = "Phone";
+"personal.email" = "Email";
+"personal.insuranceSection" = "Insurance";
+"personal.insuranceType" = "Insurance Type";
+"personal.insurance.Public" = "Public";
+"personal.insurance.Private" = "Private";
+"personal.insurance.SelfPay" = "Self-Pay";
+"personal.insurance.Other" = "Other";
+"personal.insuranceName" = "Insurance Name";
+"personal.professionSection" = "Profession";
+"personal.profession" = "Profession";
+"personal.emergencySection" = "Emergency Contact";
+"personal.emergencyName" = "Emergency Contact Name";
+"personal.emergencyPhone" = "Emergency Contact Phone";
+
+// MARK: - Medications
+"medications.title" = "Medications";
+"medications.underTreatment" = "Are you currently under medical treatment?";
+"medications.doctorName" = "Doctor's Name";
+"medications.treatmentReason" = "Reason for Treatment";
+"medications.takingMedications" = "Are you currently taking any medications?";
+"medications.listLabel" = "Please list your medications:";
+"medications.bloodThinners" = "Are you taking blood thinners?";
+"medications.bloodThinnerType" = "Type of Blood Thinner";
+"medications.thinner.Aspirin" = "Aspirin";
+"medications.thinner.Marcumar" = "Marcumar";
+"medications.thinner.Xarelto" = "Xarelto";
+"medications.thinner.Eliquis" = "Eliquis";
+"medications.thinner.Pradaxa" = "Pradaxa";
+"medications.thinner.Heparin" = "Heparin";
+"medications.thinner.Clopidogrel" = "Clopidogrel";
+"medications.thinner.Other" = "Other";
+
+// MARK: - Allergies
+"allergies.title" = "Allergies";
+"allergies.hasAllergies" = "Do you have any allergies?";
+"allergies.selectTypes" = "Please select the applicable allergies:";
+"allergies.otherPlaceholder" = "Describe other allergies...";
+"allergies.type.Penicillin" = "Penicillin";
+"allergies.type.LocalAnesthetics" = "Local Anesthetics";
+"allergies.type.Latex" = "Latex";
+"allergies.type.Iodine" = "Iodine";
+"allergies.type.NSAIDs" = "NSAIDs (e.g. Ibuprofen)";
+"allergies.type.Metals" = "Metals";
+"allergies.type.Other" = "Other";
+
+// MARK: - Medical Conditions
+"conditions.title" = "Medical Conditions";
+"conditions.subtitle" = "Please indicate if you have or have had any of the following conditions.";
+"conditions.detailsPlaceholder" = "Additional details...";
+"conditions.cardiovascular" = "Cardiovascular Disease";
+"conditions.cardiovascular.hypertension" = "High Blood Pressure (Hypertension)";
+"conditions.cardiovascular.hypotension" = "Low Blood Pressure (Hypotension)";
+"conditions.cardiovascular.heartAttack" = "Heart Attack";
+"conditions.cardiovascular.angina" = "Angina Pectoris";
+"conditions.cardiovascular.heartFailure" = "Heart Failure";
+"conditions.cardiovascular.valveDisease" = "Heart Valve Disease";
+"conditions.cardiovascular.arrhythmia" = "Cardiac Arrhythmia";
+"conditions.cardiovascular.stroke" = "Stroke";
+"conditions.pacemaker" = "Pacemaker / Defibrillator";
+"conditions.bloodDisorders" = "Blood Disorders";
+"conditions.bloodDisorders.anemia" = "Anemia";
+"conditions.bloodDisorders.hemophilia" = "Hemophilia";
+"conditions.bloodDisorders.thrombosis" = "Thrombosis";
+"conditions.diabetes" = "Diabetes";
+"conditions.diabetes.type1" = "Type 1";
+"conditions.diabetes.type2" = "Type 2";
+"conditions.respiratory" = "Respiratory Disease";
+"conditions.respiratory.asthma" = "Asthma";
+"conditions.respiratory.copd" = "COPD";
+"conditions.respiratory.sleepApnea" = "Sleep Apnea";
+"conditions.epilepsy" = "Epilepsy / Seizures";
+"conditions.infectiousDiseases" = "Infectious Diseases";
+"conditions.infectiousDiseases.hiv" = "HIV/AIDS";
+"conditions.infectiousDiseases.hepatitisB" = "Hepatitis B";
+"conditions.infectiousDiseases.hepatitisC" = "Hepatitis C";
+"conditions.infectiousDiseases.tuberculosis" = "Tuberculosis";
+"conditions.infectiousDiseases.other" = "Other";
+"conditions.liverDisease" = "Liver Disease";
+"conditions.kidneyDisease" = "Kidney Disease";
+"conditions.thyroidDisorders" = "Thyroid Disorders";
+"conditions.osteoporosis" = "Osteoporosis";
+"conditions.osteoporosis.alendronate" = "Alendronate (Fosamax)";
+"conditions.osteoporosis.zoledronicAcid" = "Zoledronic Acid (Zometa)";
+"conditions.osteoporosis.denosumab" = "Denosumab (Prolia)";
+"conditions.osteoporosis.other" = "Other";
+"conditions.autoimmune" = "Autoimmune Disease";
+"conditions.headNeckRadiation" = "Radiation to Head/Neck";
+"conditions.chemotherapy" = "Chemotherapy (current/past)";
+"conditions.otherConditions" = "Other Conditions";
+
+// MARK: - Women's Health
+"womensHealth.title" = "Women's Health";
+"womensHealth.subtitle" = "This information is important for your dental treatment.";
+"womensHealth.pregnant" = "Are you pregnant?";
+"womensHealth.trimester" = "Trimester";
+"womensHealth.trimester.first" = "1st Trimester";
+"womensHealth.trimester.second" = "2nd Trimester";
+"womensHealth.trimester.third" = "3rd Trimester";
+"womensHealth.breastfeeding" = "Are you currently breastfeeding?";
+"womensHealth.contraceptives" = "Are you taking oral contraceptives?";
+"womensHealth.contraceptiveType" = "Type of Contraceptive";
+"womensHealth.contraceptiveTypePlaceholder" = "Enter medication name...";
+
+// MARK: - Lifestyle
+"lifestyle.title" = "Lifestyle";
+"lifestyle.subtitle" = "Your responses help us personalize your treatment.";
+"lifestyle.smoking" = "Do you smoke?";
+"lifestyle.smokingAmount" = "How many cigarettes per day?";
+"lifestyle.alcohol" = "Alcohol Consumption";
+"lifestyle.alcohol.never" = "Never";
+"lifestyle.alcohol.occasionally" = "Occasionally";
+"lifestyle.alcohol.regularly" = "Regularly";
+"lifestyle.alcohol.daily" = "Daily";
+"lifestyle.bruxism" = "Do you grind or clench your teeth?";
+"lifestyle.nightguard" = "Do you wear a nightguard?";
+
+// MARK: - Dental History
+"dental.title" = "Dental History";
+"dental.visitReasonSection" = "Reason for Visit";
+"dental.visitReason" = "Reason for Visit";
+"dental.visitReason.select" = "Please select...";
+"dental.visitReason.Checkup" = "Check-up";
+"dental.visitReason.Pain" = "Pain";
+"dental.visitReason.Aesthetic" = "Aesthetic Treatment";
+"dental.visitReason.Implant" = "Implant";
+"dental.visitReason.BracesStrightening" = "Braces / Straightening";
+"dental.visitReason.Continuation" = "Continuation of Treatment";
+"dental.visitReason.Other" = "Other";
+"dental.aestheticType" = "Type of Aesthetic Treatment";
+"dental.aestheticType.select" = "Please select...";
+"dental.aestheticType.Veneers" = "Veneers";
+"dental.aestheticType.VeneerRevision" = "Veneer Revision";
+"dental.aestheticType.CompositeBonding" = "Composite Bonding";
+"dental.aestheticType.PrintedVeneers" = "3D Printed Veneers";
+"dental.aestheticType.SmileMakeover" = "Smile Makeover";
+"dental.lastVisitSection" = "Last Dental Visit";
+"dental.lastVisit" = "When was your last dental visit?";
+"dental.lastVisit.select" = "Please select...";
+"dental.lastVisit.LessThan6Months" = "Less than 6 months";
+"dental.lastVisit.6To12Months" = "6-12 months";
+"dental.lastVisit.1To2Years" = "1-2 years";
+"dental.lastVisit.MoreThan2Years" = "More than 2 years";
+"dental.lastVisit.Never" = "Never";
+"dental.bleedingGums" = "Do your gums bleed when brushing?";
+"dental.hasTMJ" = "Do you have jaw joint problems?";
+"dental.tmjSymptoms" = "Symptoms:";
+"dental.tmj.Clicking" = "Clicking";
+"dental.tmj.Pain" = "Pain";
+"dental.tmj.LimitedOpening" = "Limited Opening";
+"dental.tmj.Locking" = "Locking";
+"dental.hadDentalSurgery" = "Have you had dental surgery before?";
+"dental.hadAnesthesiaComplications" = "Have you had anesthesia complications?";
+"dental.anesthesiaDetails" = "Details about complications...";
+"dental.anxietyLevel" = "Dental Anxiety Level";
+"dental.anxiety.None" = "None";
+"dental.anxiety.Mild" = "Mild";
+"dental.anxiety.Moderate" = "Moderate";
+"dental.anxiety.Severe" = "Severe";
+
+// MARK: - BDD Screener
+"bdd.title" = "Self-Perception Questionnaire";
+"bdd.q1" = "How satisfied are you with the appearance of your teeth?";
+"bdd.q1.a0" = "Very satisfied";
+"bdd.q1.a1" = "Satisfied";
+"bdd.q1.a2" = "Dissatisfied";
+"bdd.q1.a3" = "Very dissatisfied";
+"bdd.q2" = "How often do you think about the appearance of your teeth?";
+"bdd.q2.a0" = "Rarely";
+"bdd.q2.a1" = "Sometimes";
+"bdd.q2.a2" = "Often";
+"bdd.q2.a3" = "Constantly";
+"bdd.q3" = "Do you avoid smiling in social situations?";
+"bdd.q3.a0" = "Never";
+"bdd.q3.a1" = "Rarely";
+"bdd.q3.a2" = "Sometimes";
+"bdd.q3.a3" = "Always";
+"bdd.q4" = "Does the appearance of your teeth affect your self-confidence?";
+"bdd.q4.a0" = "Not at all";
+"bdd.q4.a1" = "A little";
+"bdd.q4.a2" = "Moderately";
+"bdd.q4.a3" = "Significantly";
+"bdd.q5" = "Do you compare your teeth with other people's teeth?";
+"bdd.q5.a0" = "Never";
+"bdd.q5.a1" = "Rarely";
+"bdd.q5.a2" = "Often";
+"bdd.q5.a3" = "Constantly";
+"bdd.q6" = "How much does the appearance of your teeth affect your daily life?";
+"bdd.q6.a0" = "Not at all";
+"bdd.q6.a1" = "A little";
+"bdd.q6.a2" = "Moderately";
+"bdd.q6.a3" = "Significantly";
+"bdd.q7" = "How realistic do you consider your expectations for the outcome?";
+"bdd.q7.a0" = "Very realistic";
+"bdd.q7.a1" = "Realistic";
+"bdd.q7.a2" = "Somewhat unrealistic";
+"bdd.q7.a3" = "Unrealistic";
+
+// MARK: - Consent
+"consent.title" = "Consents";
+"consent.submitting" = "Processing...";
+"consent.privacyTitle" = "Privacy Notice";
+"consent.privacyNotice" = "The data controller is the dental practice specified in the settings. Your personal data including health data is collected and processed for the purpose of dental treatment, billing, and communication with dental laboratories.
+
+Legal basis: Art. 6(1)(b) and Art. 9(2)(h) GDPR; Section 19 Austrian Dental Act (ZAG).
+
+Recipients: Dental laboratories, social insurance carriers, specialists (in case of referral).
+
+Retention period: Your data will be retained for at least 10 years (Section 19(3) ZAG).
+
+Your rights: You have the right to access, rectification, erasure, restriction of processing, data portability, and objection. Complaints may be directed to the Austrian Data Protection Authority (dsb.gv.at).";
+"consent.mandatoryTitle" = "Mandatory Consents";
+"consent.gdpr" = "I consent to the processing of my personal data and health data for the purpose of dental treatment, billing, and laboratory communication in accordance with the GDPR.";
+"consent.driving" = "I acknowledge that after treatment with local anesthesia or sedation, my ability to drive may be impaired. I will not drive or operate machinery in such cases.";
+"consent.missedAppointment" = "I acknowledge that missed appointments without timely cancellation (at least 24 hours in advance) will incur a fee of €%d.";
+"consent.photoTitle" = "Photo Consents (optional)";
+"consent.photoNote" = "Consent is voluntary and does not affect the quality of your treatment. You may withdraw your consent at any time.";
+"consent.photosInternal" = "I consent to photographs being taken and stored for internal dental documentation.";
+"consent.photosResearch" = "I consent to the use of anonymized photographs for scientific publications and research.";
+"consent.photosMarketing" = "I consent to the use of anonymized photographs for the practice's website, social media, and marketing purposes.";
+"consent.signatureTitle" = "Signature";
+"consent.date" = "Date";
+
+// MARK: - Signature Pad
+"signature" = "Signature";
+"signature_instruction" = "Please sign here using your finger or Apple Pencil";
+"clear" = "Clear";
+
+// MARK: - PIN Entry
+"enter_staff_pin" = "Enter Staff PIN";
+"incorrect_pin" = "Incorrect PIN";
+
+// MARK: - Settings
+"settings_title" = "Settings";
+"clinic_information" = "Clinic Information";
+"clinic_name" = "Clinic Name";
+"subtitle" = "Subtitle";
+"street" = "Street";
+"postal_code" = "Postal Code";
+"city" = "City";
+"country" = "Country";
+"website" = "Website";
+"email" = "Email";
+"logo" = "Logo";
+"select_logo" = "Select Logo";
+"change_logo" = "Change Logo";
+"remove_logo" = "Remove Logo";
+"fees" = "Fees";
+"missed_appointment_fee" = "Missed Appointment Fee";
+"security" = "Security";
+"staff_pin" = "Staff PIN";
+"pin_footer" = "The PIN is required to access settings.";
+"pdf_archive" = "PDF Archive";
+"no_pdfs" = "No PDFs";
+"no_pdfs_description" = "Submitted forms will appear here.";
+"delete_pdf" = "Delete PDF?";
+"delete_pdf_message" = "Are you sure you want to delete this PDF? This action cannot be undone.";
+
+// MARK: - Validation
+"validation.firstNameRequired" = "First name is required.";
+"validation.lastNameRequired" = "Last name is required.";
+"validation.gdprRequired" = "GDPR consent is required.";
+"validation.drivingRequired" = "Driving impairment acknowledgment is required.";
+"validation.missedAppointmentRequired" = "Missed appointment acknowledgment is required.";
+"validation.signatureRequired" = "A signature is required.";

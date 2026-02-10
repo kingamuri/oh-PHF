@@ -61,32 +61,39 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 # Generate/regenerate Xcode project (after modifying project.yml)
 xcodegen generate
 
-# Resolve Swift packages
-xcodebuild -resolvePackageDependencies -project Qonveox.xcodeproj -scheme Qonveox
-
-# Build for simulator
-xcodebuild -project Qonveox.xcodeproj -scheme Qonveox -destination 'platform=iOS Simulator,name=iPhone 16' build
+# Build for generic iOS (no code signing)
+# Note: Use symlink to avoid shell escaping issues with "!" in path
+ln -sf "/Users/amuri/Desktop/oh! PHF" /tmp/ohphf_build
+xcodebuild -project /tmp/ohphf_build/OhPHF.xcodeproj -scheme OhPHF \
+  -destination generic/platform=iOS \
+  CODE_SIGNING_ALLOWED=NO \
+  IPHONEOS_DEPLOYMENT_TARGET=18.0 \
+  build
 
 # Open in Xcode
-open Qonveox.xcodeproj
+open "OhPHF.xcodeproj"
 ```
 
 ## Architecture
 
 **Pattern:** MVVM with SwiftUI. Views own ViewModels via `@StateObject`. Services injected via `.environmentObject()`.
 
-**Auth flow (RootView):** `isLoading` → `LoginView` (no firebase user) → `ProfileSetupView` (no app user profile) → `MainTabView` (fully authenticated).
+**App flow:** WelcomeView (language select + patient number) → 8 form pages → ConsentsView (signature + submit) → PDF → Email → Reset.
 
-**Navigation:** Tab-based — Cases (inbox/sent toggle), Connections, Profile. Each tab has its own `NavigationStack`.
+**Navigation:** Page-based form flow managed by `FormViewModel.currentPage`. Conditional page skipping (Women's Health only for female patients). BDD screener only for aesthetic visit reasons.
 
-**Data layer:** Firebase Firestore for structured data, Firebase Storage for file uploads. Models use `@DocumentID` and `Codable` for direct Firestore mapping.
+**Localization:** Runtime language switching via `LocalizationManager` singleton. `L(_:)` global helper reads from `.lproj/Localizable.strings` bundles. 4 languages: DE, EN, RU, AR (RTL).
 
 **Key models:**
-- `AppUser` — doctor profile (both referrer and receiver role)
-- `ReferralCase` — patient case with status workflow (submitted → in_review → scheduled → completed)
-- `Connection` — doctor-to-doctor link (query with two queries, merge client-side)
-- `CaseFile` — file attachment (supports both `storagePath` for direct uploads and `externalURL` for WeTransfer/Smash links)
+- `PatientForm` — single Codable struct with nested types for each form page
+- `ClinicSettings` — clinic configuration persisted via UserDefaults (JSON encoded)
+- `BDDScorer` — Body Dysmorphic Disorder screening (7 questions, 0-21 score, color-coded risk levels)
+
+**Services:**
+- `PDFGeneratorService` — A4 PDF generation via `UIGraphicsPDFRenderer`
+- `EmailComposerView` — `MFMailComposeViewController` wrapper for sending PDF
+- `PDFStorageService` — FileManager-based rolling buffer (last 50 PDFs)
 
 **Project generation:** Uses XcodeGen (`project.yml`). Run `xcodegen generate` after any project structure changes.
 
-**Firebase setup:** Requires `GoogleService-Info.plist` in `Qonveox/` directory (not committed to git — obtain from Firebase Console).
+**Kiosk mode:** Idle timer disabled, status bar hidden, long-press logo (3s) → PIN entry → Settings. Default PIN: "1234".

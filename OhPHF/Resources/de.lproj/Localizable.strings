@@ -1,0 +1,303 @@
+// MARK: - Common UI
+"yes" = "Ja";
+"no" = "Nein";
+"back" = "Zurück";
+"next" = "Weiter";
+"submit" = "Absenden";
+"submitting" = "Wird gesendet...";
+"save" = "Speichern";
+"cancel" = "Abbrechen";
+"delete" = "Löschen";
+"share" = "Teilen";
+
+// MARK: - Welcome (Screen 0)
+"welcome.title" = "Willkommen";
+"welcome.patientNumber" = "Patientennummer";
+"welcome.patientNumberPlaceholder" = "Bitte Patientennummer eingeben";
+"welcome.start" = "Fragebogen starten";
+
+// MARK: - Personal Info (Screen 1)
+"personal.title" = "Persönliche Angaben";
+"personal.nameSection" = "Name & Geschlecht";
+"personal.title.Mr" = "Herr";
+"personal.title.Mrs" = "Frau";
+"personal.title.Diverse" = "Divers";
+"personal.title.Child" = "Kind";
+"personal.firstName" = "Vorname";
+"personal.lastName" = "Nachname";
+"personal.dateOfBirth" = "Geburtsdatum";
+"personal.gender" = "Geschlecht";
+"personal.gender.Male" = "Männlich";
+"personal.gender.Female" = "Weiblich";
+"personal.gender.Diverse" = "Divers";
+"personal.addressSection" = "Adresse";
+"personal.street" = "Straße";
+"personal.postalCode" = "PLZ";
+"personal.city" = "Stadt";
+"personal.country" = "Land";
+"personal.contactSection" = "Kontaktdaten";
+"personal.phone" = "Telefon";
+"personal.email" = "E-Mail";
+"personal.insuranceSection" = "Versicherung";
+"personal.insuranceType" = "Versicherungsart";
+"personal.insurance.Public" = "Gesetzlich";
+"personal.insurance.Private" = "Privat";
+"personal.insurance.SelfPay" = "Selbstzahler";
+"personal.insurance.Other" = "Sonstige";
+"personal.insuranceName" = "Name der Versicherung";
+"personal.professionSection" = "Beruf";
+"personal.profession" = "Beruf";
+"personal.emergencySection" = "Notfallkontakt";
+"personal.emergencyName" = "Name des Notfallkontakts";
+"personal.emergencyPhone" = "Telefon des Notfallkontakts";
+
+// MARK: - Medications (Screen 2)
+"medications.title" = "Medikamente";
+"medications.underTreatment" = "Sind Sie derzeit in ärztlicher Behandlung?";
+"medications.doctorName" = "Name des behandelnden Arztes";
+"medications.treatmentReason" = "Behandlungsgrund";
+"medications.takingMedications" = "Nehmen Sie derzeit Medikamente ein?";
+"medications.listLabel" = "Bitte listen Sie Ihre Medikamente auf:";
+"medications.bloodThinners" = "Nehmen Sie Blutverdünner ein?";
+"medications.bloodThinnerType" = "Art des Blutverdünners";
+"medications.thinner.Aspirin" = "Aspirin";
+"medications.thinner.Marcumar" = "Marcumar";
+"medications.thinner.Xarelto" = "Xarelto";
+"medications.thinner.Eliquis" = "Eliquis";
+"medications.thinner.Pradaxa" = "Pradaxa";
+"medications.thinner.Heparin" = "Heparin";
+"medications.thinner.Clopidogrel" = "Clopidogrel";
+"medications.thinner.Other" = "Sonstige";
+
+// MARK: - Allergies (Screen 3)
+"allergies.title" = "Allergien";
+"allergies.hasAllergies" = "Haben Sie Allergien?";
+"allergies.selectTypes" = "Bitte wählen Sie die zutreffenden Allergien:";
+"allergies.otherPlaceholder" = "Sonstige Allergien beschreiben...";
+"allergies.type.Penicillin" = "Penicillin";
+"allergies.type.LocalAnesthetics" = "Lokalanästhetika";
+"allergies.type.Latex" = "Latex";
+"allergies.type.Iodine" = "Jod";
+"allergies.type.NSAIDs" = "NSAR (z.B. Ibuprofen)";
+"allergies.type.Metals" = "Metalle";
+"allergies.type.Other" = "Sonstige";
+
+// MARK: - Medical Conditions (Screen 4)
+"conditions.title" = "Vorerkrankungen";
+"conditions.subtitle" = "Bitte geben Sie an, ob Sie eine der folgenden Erkrankungen haben oder hatten.";
+"conditions.detailsPlaceholder" = "Weitere Details...";
+"conditions.cardiovascular" = "Herz-Kreislauf-Erkrankungen";
+"conditions.cardiovascular.hypertension" = "Bluthochdruck (Hypertonie)";
+"conditions.cardiovascular.hypotension" = "Niedriger Blutdruck (Hypotonie)";
+"conditions.cardiovascular.heartAttack" = "Herzinfarkt";
+"conditions.cardiovascular.angina" = "Angina Pectoris";
+"conditions.cardiovascular.heartFailure" = "Herzinsuffizienz";
+"conditions.cardiovascular.valveDisease" = "Herzklappenerkrankung";
+"conditions.cardiovascular.arrhythmia" = "Herzrhythmusstörung";
+"conditions.cardiovascular.stroke" = "Schlaganfall";
+"conditions.pacemaker" = "Herzschrittmacher / Defibrillator";
+"conditions.bloodDisorders" = "Bluterkrankungen";
+"conditions.bloodDisorders.anemia" = "Anämie (Blutarmut)";
+"conditions.bloodDisorders.hemophilia" = "Hämophilie (Bluterkrankheit)";
+"conditions.bloodDisorders.thrombosis" = "Thrombose";
+"conditions.diabetes" = "Diabetes";
+"conditions.diabetes.type1" = "Typ 1";
+"conditions.diabetes.type2" = "Typ 2";
+"conditions.respiratory" = "Atemwegserkrankungen";
+"conditions.respiratory.asthma" = "Asthma";
+"conditions.respiratory.copd" = "COPD";
+"conditions.respiratory.sleepApnea" = "Schlafapnoe";
+"conditions.epilepsy" = "Epilepsie / Krampfanfälle";
+"conditions.infectiousDiseases" = "Infektionskrankheiten";
+"conditions.infectiousDiseases.hiv" = "HIV/AIDS";
+"conditions.infectiousDiseases.hepatitisB" = "Hepatitis B";
+"conditions.infectiousDiseases.hepatitisC" = "Hepatitis C";
+"conditions.infectiousDiseases.tuberculosis" = "Tuberkulose";
+"conditions.infectiousDiseases.other" = "Sonstige";
+"conditions.liverDisease" = "Lebererkrankung";
+"conditions.kidneyDisease" = "Nierenerkrankung";
+"conditions.thyroidDisorders" = "Schilddrüsenerkrankung";
+"conditions.osteoporosis" = "Osteoporose";
+"conditions.osteoporosis.alendronate" = "Alendronat (Fosamax)";
+"conditions.osteoporosis.zoledronicAcid" = "Zoledronsäure (Zometa)";
+"conditions.osteoporosis.denosumab" = "Denosumab (Prolia)";
+"conditions.osteoporosis.other" = "Sonstige";
+"conditions.autoimmune" = "Autoimmunerkrankung";
+"conditions.headNeckRadiation" = "Bestrahlung im Kopf-/Halsbereich";
+"conditions.chemotherapy" = "Chemotherapie (aktuell/vergangen)";
+"conditions.otherConditions" = "Sonstige Erkrankungen";
+
+// MARK: - Women\'s Health (Screen 5)
+"womensHealth.title" = "Frauengesundheit";
+"womensHealth.subtitle" = "Diese Informationen sind wichtig für Ihre zahnärztliche Behandlung.";
+"womensHealth.pregnant" = "Sind Sie schwanger?";
+"womensHealth.trimester" = "Trimester";
+"womensHealth.trimester.first" = "1. Trimester";
+"womensHealth.trimester.second" = "2. Trimester";
+"womensHealth.trimester.third" = "3. Trimester";
+"womensHealth.breastfeeding" = "Stillen Sie derzeit?";
+"womensHealth.contraceptives" = "Nehmen Sie orale Verhütungsmittel?";
+"womensHealth.contraceptiveType" = "Art des Verhütungsmittels";
+"womensHealth.contraceptiveTypePlaceholder" = "Präparatname eingeben...";
+
+// MARK: - Lifestyle (Screen 6)
+"lifestyle.title" = "Lebensgewohnheiten";
+"lifestyle.subtitle" = "Ihre Angaben helfen uns, die Behandlung individuell anzupassen.";
+"lifestyle.smoking" = "Rauchen Sie?";
+"lifestyle.smokingAmount" = "Wie viele Zigaretten pro Tag?";
+"lifestyle.alcohol" = "Alkoholkonsum";
+"lifestyle.alcohol.never" = "Nie";
+"lifestyle.alcohol.occasionally" = "Gelegentlich";
+"lifestyle.alcohol.regularly" = "Regelmäßig";
+"lifestyle.alcohol.daily" = "Täglich";
+"lifestyle.bruxism" = "Knirschen oder Pressen Sie mit den Zähnen?";
+"lifestyle.nightguard" = "Tragen Sie eine Aufbissschiene?";
+
+// MARK: - Dental History (Screen 7)
+"dental.title" = "Zahnärztliche Vorgeschichte";
+"dental.visitReasonSection" = "Besuchsgrund";
+"dental.visitReason" = "Grund des Besuchs";
+"dental.visitReason.select" = "Bitte auswählen...";
+"dental.visitReason.Checkup" = "Kontrolle";
+"dental.visitReason.Pain" = "Schmerzen";
+"dental.visitReason.Aesthetic" = "Ästhetische Behandlung";
+"dental.visitReason.Implant" = "Implantat";
+"dental.visitReason.BracesStrightening" = "Zahnspange / Begradigung";
+"dental.visitReason.Continuation" = "Weiterbehandlung";
+"dental.visitReason.Other" = "Sonstige";
+"dental.aestheticType" = "Art der ästhetischen Behandlung";
+"dental.aestheticType.select" = "Bitte auswählen...";
+"dental.aestheticType.Veneers" = "Veneers";
+"dental.aestheticType.VeneerRevision" = "Veneer-Korrektur";
+"dental.aestheticType.CompositeBonding" = "Composite Bonding";
+"dental.aestheticType.PrintedVeneers" = "3D-gedruckte Veneers";
+"dental.aestheticType.SmileMakeover" = "Smile Makeover";
+"dental.lastVisitSection" = "Letzter Zahnarztbesuch";
+"dental.lastVisit" = "Wann waren Sie zuletzt beim Zahnarzt?";
+"dental.lastVisit.select" = "Bitte auswählen...";
+"dental.lastVisit.LessThan6Months" = "Weniger als 6 Monate";
+"dental.lastVisit.6To12Months" = "6-12 Monate";
+"dental.lastVisit.1To2Years" = "1-2 Jahre";
+"dental.lastVisit.MoreThan2Years" = "Mehr als 2 Jahre";
+"dental.lastVisit.Never" = "Nie";
+"dental.bleedingGums" = "Blutet Ihr Zahnfleisch beim Putzen?";
+"dental.hasTMJ" = "Haben Sie Kiefergelenksprobleme?";
+"dental.tmjSymptoms" = "Symptome:";
+"dental.tmj.Clicking" = "Knacken";
+"dental.tmj.Pain" = "Schmerzen";
+"dental.tmj.LimitedOpening" = "Eingeschränkte Mundöffnung";
+"dental.tmj.Locking" = "Kiefersperre";
+"dental.hadDentalSurgery" = "Hatten Sie bereits eine zahnärztliche Operation?";
+"dental.hadAnesthesiaComplications" = "Hatten Sie Komplikationen bei einer Narkose?";
+"dental.anesthesiaDetails" = "Details zu den Komplikationen...";
+"dental.anxietyLevel" = "Angst vor zahnärztlicher Behandlung";
+"dental.anxiety.None" = "Keine";
+"dental.anxiety.Mild" = "Leicht";
+"dental.anxiety.Moderate" = "Mittel";
+"dental.anxiety.Severe" = "Stark";
+
+// MARK: - BDD Screener
+"bdd.title" = "Fragebogen zur Selbstwahrnehmung";
+"bdd.q1" = "Wie zufrieden sind Sie mit dem Aussehen Ihrer Zähne?";
+"bdd.q1.a0" = "Sehr zufrieden";
+"bdd.q1.a1" = "Zufrieden";
+"bdd.q1.a2" = "Unzufrieden";
+"bdd.q1.a3" = "Sehr unzufrieden";
+"bdd.q2" = "Wie oft denken Sie über das Aussehen Ihrer Zähne nach?";
+"bdd.q2.a0" = "Selten";
+"bdd.q2.a1" = "Manchmal";
+"bdd.q2.a2" = "Oft";
+"bdd.q2.a3" = "Ständig";
+"bdd.q3" = "Vermeiden Sie es, in sozialen Situationen zu lächeln?";
+"bdd.q3.a0" = "Nie";
+"bdd.q3.a1" = "Selten";
+"bdd.q3.a2" = "Manchmal";
+"bdd.q3.a3" = "Immer";
+"bdd.q4" = "Beeinflusst das Aussehen Ihrer Zähne Ihr Selbstvertrauen?";
+"bdd.q4.a0" = "Gar nicht";
+"bdd.q4.a1" = "Wenig";
+"bdd.q4.a2" = "Mäßig";
+"bdd.q4.a3" = "Stark";
+"bdd.q5" = "Vergleichen Sie Ihre Zähne mit denen anderer Menschen?";
+"bdd.q5.a0" = "Nie";
+"bdd.q5.a1" = "Selten";
+"bdd.q5.a2" = "Oft";
+"bdd.q5.a3" = "Ständig";
+"bdd.q6" = "Wie stark beeinträchtigt Sie das Aussehen Ihrer Zähne im Alltag?";
+"bdd.q6.a0" = "Gar nicht";
+"bdd.q6.a1" = "Wenig";
+"bdd.q6.a2" = "Mäßig";
+"bdd.q6.a3" = "Stark";
+"bdd.q7" = "Wie realistisch schätzen Sie Ihre Erwartungen an das Ergebnis ein?";
+"bdd.q7.a0" = "Sehr realistisch";
+"bdd.q7.a1" = "Realistisch";
+"bdd.q7.a2" = "Eher unrealistisch";
+"bdd.q7.a3" = "Unrealistisch";
+
+// MARK: - Consent (Screen 8)
+"consent.title" = "Einwilligungen";
+"consent.submitting" = "Wird verarbeitet...";
+"consent.privacyTitle" = "Datenschutzerklärung";
+"consent.privacyNotice" = "Verantwortlicher für die Verarbeitung Ihrer Daten ist die in den Einstellungen hinterlegte Zahnarztpraxis. Ihre personenbezogenen Daten einschließlich Gesundheitsdaten werden zum Zweck der zahnärztlichen Behandlung, Abrechnung und Kommunikation mit Dentallaboren erhoben und verarbeitet.
+
+Rechtsgrundlage: Art. 6 Abs. 1 lit. b und Art. 9 Abs. 2 lit. h DSGVO; § 19 Zahnärztegesetz (ZAG).
+
+Empfänger: Dentallabore, Sozialversicherungsträger, Fachärzte (bei Überweisung).
+
+Speicherdauer: Ihre Daten werden mindestens 10 Jahre aufbewahrt (§ 19 Abs. 3 ZAG).
+
+Ihre Rechte: Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Beschwerden können an die Österreichische Datenschutzbehörde (dsb.gv.at) gerichtet werden.";
+"consent.mandatoryTitle" = "Pflichteinwilligungen";
+"consent.gdpr" = "Ich willige in die Verarbeitung meiner personenbezogenen Daten und Gesundheitsdaten zum Zweck der zahnärztlichen Behandlung, Abrechnung und Kommunikation mit Laboren gemäß DSGVO ein.";
+"consent.driving" = "Mir ist bekannt, dass nach einer Behandlung mit Lokalanästhesie oder Sedierung meine Fahrtauglichkeit eingeschränkt sein kann. Ich werde in diesem Fall nicht selbst am Straßenverkehr teilnehmen.";
+"consent.missedAppointment" = "Ich nehme zur Kenntnis, dass bei versäumten Terminen ohne rechtzeitige Absage (mind. 24 Stunden vorher) eine Ausfallgebühr von €%d erhoben wird.";
+"consent.photoTitle" = "Foto-Einwilligungen (optional)";
+"consent.photoNote" = "Die Einwilligung ist freiwillig und hat keinen Einfluss auf die Qualität Ihrer Behandlung. Sie können Ihre Einwilligung jederzeit widerrufen.";
+"consent.photosInternal" = "Ich stimme der Anfertigung und Speicherung von Fotos für die interne zahnärztliche Dokumentation zu.";
+"consent.photosResearch" = "Ich stimme der Verwendung anonymisierter Fotos für wissenschaftliche Veröffentlichungen und Forschung zu.";
+"consent.photosMarketing" = "Ich stimme der Verwendung anonymisierter Fotos für die Website, soziale Medien und Marketingzwecke der Praxis zu.";
+"consent.signatureTitle" = "Unterschrift";
+"consent.date" = "Datum";
+
+// MARK: - Signature Pad
+"signature" = "Unterschrift";
+"signature_instruction" = "Bitte unterschreiben Sie hier mit dem Finger oder Apple Pencil";
+"clear" = "Löschen";
+
+// MARK: - PIN Entry
+"enter_staff_pin" = "Personal-PIN eingeben";
+"incorrect_pin" = "Falscher PIN";
+
+// MARK: - Settings
+"settings_title" = "Einstellungen";
+"clinic_information" = "Praxis-Informationen";
+"clinic_name" = "Praxisname";
+"subtitle" = "Untertitel";
+"street" = "Straße";
+"postal_code" = "Postleitzahl";
+"city" = "Stadt";
+"country" = "Land";
+"website" = "Webseite";
+"email" = "E-Mail";
+"logo" = "Logo";
+"select_logo" = "Logo auswählen";
+"change_logo" = "Logo ändern";
+"remove_logo" = "Logo entfernen";
+"fees" = "Gebühren";
+"missed_appointment_fee" = "Terminversäumnisgebühr";
+"security" = "Sicherheit";
+"staff_pin" = "Personal-PIN";
+"pin_footer" = "Der PIN wird benötigt, um die Einstellungen aufzurufen.";
+"pdf_archive" = "PDF-Archiv";
+"no_pdfs" = "Keine PDFs";
+"no_pdfs_description" = "Eingereichte Formulare werden hier angezeigt.";
+"delete_pdf" = "PDF löschen?";
+"delete_pdf_message" = "Möchten Sie dieses PDF wirklich löschen? Dies kann nicht rückgängig gemacht werden.";
+
+// MARK: - Validation
+"validation.firstNameRequired" = "Vorname ist erforderlich.";
+"validation.lastNameRequired" = "Nachname ist erforderlich.";
+"validation.gdprRequired" = "Die DSGVO-Einwilligung ist erforderlich.";
+"validation.drivingRequired" = "Die Fahrtauglichkeits-Bestätigung ist erforderlich.";
+"validation.missedAppointmentRequired" = "Die Terminversäumnis-Kenntnisnahme ist erforderlich.";
+"validation.signatureRequired" = "Eine Unterschrift ist erforderlich.";
