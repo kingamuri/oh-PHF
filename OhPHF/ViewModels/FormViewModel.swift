@@ -159,6 +159,9 @@ final class FormViewModel: ObservableObject {
         showThankYou = false
         generatedPDFData = nil
         validationErrors = []
+
+        // Revert to the clinic's default language
+        LocalizationManager.shared.languageCode = ClinicSettings.load().defaultLanguage
     }
 
     private func scheduleReset() {

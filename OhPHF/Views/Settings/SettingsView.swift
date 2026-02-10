@@ -5,6 +5,7 @@ struct SettingsView: View {
     @EnvironmentObject var settingsVM: SettingsViewModel
     @Environment(\.dismiss) var dismiss
     @State private var selectedPhoto: PhotosPickerItem?
+    @State private var showGuidedAccessAlert = false
 
     var body: some View {
         NavigationStack {
@@ -14,6 +15,7 @@ struct SettingsView: View {
                 feesSection
                 smtpSection
                 securitySection
+                kioskSection
                 archiveSection
             }
             .navigationTitle(L("settings_title"))
@@ -29,6 +31,11 @@ struct SettingsView: View {
                         dismiss()
                     }
                 }
+            }
+            .alert(L("kiosk_not_configured"), isPresented: $showGuidedAccessAlert) {
+                Button("OK", role: .cancel) {}
+            } message: {
+                Text(L("kiosk_not_configured_message"))
             }
             .onChange(of: selectedPhoto) { newValue in
                 guard let newValue else { return }
@@ -59,6 +66,18 @@ struct SettingsView: View {
                 .keyboardType(.emailAddress)
                 .textContentType(.emailAddress)
                 .autocapitalization(.none)
+
+            HStack {
+                Text(L("default_language"))
+                Spacer()
+                Picker(L("default_language"), selection: $settingsVM.settings.defaultLanguage) {
+                    ForEach(AppLanguage.allCases) { lang in
+                        Text("\(lang.flag) \(lang.displayName)").tag(lang.rawValue)
+                    }
+                }
+                .labelsHidden()
+                .tint(Theme.accentBlue)
+            }
         } header: {
             Text(L("clinic_information"))
         }
@@ -167,6 +186,49 @@ struct SettingsView: View {
             Text(L("security"))
         } footer: {
             Text(L("pin_footer"))
+                .font(.caption)
+        }
+    }
+
+    private var kioskSection: some View {
+        Section {
+            Toggle(L("kiosk_mode"), isOn: $settingsVM.settings.kioskModeEnabled)
+                .tint(Theme.accentBlue)
+                .onChange(of: settingsVM.settings.kioskModeEnabled) { enabled in
+                    if enabled {
+                        GuidedAccessManager.shared.enterGuidedAccess { success in
+                            if !success {
+                                settingsVM.settings.kioskModeEnabled = false
+                                showGuidedAccessAlert = true
+                            }
+                        }
+                    } else {
+                        GuidedAccessManager.shared.exitGuidedAccess()
+                    }
+                }
+
+            if GuidedAccessManager.shared.isActive {
+                HStack {
+                    Image(systemName: "lock.fill")
+                        .foregroundStyle(.green)
+                    Text(L("kiosk_active_status"))
+                        .font(Theme.captionFont)
+                        .foregroundStyle(.green)
+                }
+            }
+
+            VStack(alignment: .leading, spacing: 8) {
+                Text(L("kiosk_setup_title"))
+                    .font(Theme.bodyFont.bold())
+                Text(L("kiosk_setup_instructions"))
+                    .font(Theme.captionFont)
+                    .foregroundStyle(.secondary)
+            }
+            .padding(.vertical, 4)
+        } header: {
+            Text(L("kiosk_section"))
+        } footer: {
+            Text(L("kiosk_footer"))
                 .font(.caption)
         }
     }

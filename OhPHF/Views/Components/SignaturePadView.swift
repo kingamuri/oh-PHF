@@ -6,6 +6,7 @@ import PencilKit
 /// Renders the signature to PNG data via the binding.
 struct SignaturePadView: View {
     @Binding var signatureData: Data?
+    @Binding var isDrawing: Bool
     @State private var canvasView = PKCanvasView()
     @State private var hasDrawing = false
 
@@ -14,6 +15,7 @@ struct SignaturePadView: View {
             // Canvas
             SignatureCanvas(
                 canvasView: $canvasView,
+                isDrawing: $isDrawing,
                 onChanged: handleDrawingChanged
             )
             .frame(height: 200)
@@ -81,6 +83,7 @@ struct SignaturePadView: View {
 
 private struct SignatureCanvas: UIViewRepresentable {
     @Binding var canvasView: PKCanvasView
+    @Binding var isDrawing: Bool
     let onChanged: () -> Void
 
     func makeUIView(context: Context) -> PKCanvasView {
@@ -98,18 +101,28 @@ private struct SignatureCanvas: UIViewRepresentable {
     }
 
     func makeCoordinator() -> Coordinator {
-        Coordinator(onChanged: onChanged)
+        Coordinator(isDrawing: $isDrawing, onChanged: onChanged)
     }
 
     final class Coordinator: NSObject, PKCanvasViewDelegate {
+        @Binding var isDrawing: Bool
         let onChanged: () -> Void
 
-        init(onChanged: @escaping () -> Void) {
+        init(isDrawing: Binding<Bool>, onChanged: @escaping () -> Void) {
+            self._isDrawing = isDrawing
             self.onChanged = onChanged
         }
 
         func canvasViewDrawingDidChange(_ canvasView: PKCanvasView) {
             onChanged()
+        }
+
+        func canvasViewDidBeginUsingTool(_ canvasView: PKCanvasView) {
+            isDrawing = true
+        }
+
+        func canvasViewDidEndUsingTool(_ canvasView: PKCanvasView) {
+            isDrawing = false
         }
     }
 }
@@ -123,7 +136,7 @@ private struct SignatureCanvas: UIViewRepresentable {
                 SkyBackground()
 
                 GlassCard {
-                    SignaturePadView(signatureData: $signature)
+                        SignaturePadView(signatureData: $signature, isDrawing: .constant(false))
                 }
                 .padding()
             }

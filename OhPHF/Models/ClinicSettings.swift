@@ -12,6 +12,7 @@ struct ClinicSettings: Codable {
     var logoData: Data?
     var missedAppointmentFee: Int = 150
     var staffPIN: String = "1234"
+    var defaultLanguage: String = "de"
 
     // SMTP configuration for automatic email delivery
     var smtpEnabled: Bool = false
@@ -19,6 +20,9 @@ struct ClinicSettings: Codable {
     var smtpPort: Int = 465         // SSL/TLS port
     var smtpUsername: String = ""   // e.g. "clinic@gmail.com"
     var smtpPassword: String = ""   // App password (not regular password)
+
+    // Kiosk mode — locks iPad to app via Guided Access
+    var kioskModeEnabled: Bool = false
 
     var fullAddress: String {
         var components: [String] = []

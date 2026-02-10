@@ -3,6 +3,7 @@ import SwiftUI
 struct ConsentsView: View {
     @EnvironmentObject var formVM: FormViewModel
     @EnvironmentObject var settingsVM: SettingsViewModel
+    @State private var isDrawingSignature = false
 
     private var consent: Binding<ConsentInfo> {
         $formVM.form.consentInfo
@@ -36,6 +37,7 @@ struct ConsentsView: View {
                     .frame(maxWidth: Theme.maxFormWidth)
                     .padding()
                 }
+                .scrollDisabled(isDrawingSignature)
 
                 // MARK: - Navigation Bar (Last Page)
                 FormNavigationBar(
@@ -195,7 +197,7 @@ struct ConsentsView: View {
                     .font(Theme.headlineFont)
                     .foregroundStyle(Theme.deepBlue)
 
-                SignaturePadView(signatureData: $formVM.form.signatureData)
+                SignaturePadView(signatureData: $formVM.form.signatureData, isDrawing: $isDrawingSignature)
 
                 // Auto-date display
                 HStack {

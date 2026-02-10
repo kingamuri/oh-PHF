@@ -248,7 +248,7 @@
 "consent.mandatoryFootnote" = "* Pflichtfeld";
 "consent.gdpr" = "Ich willige in die Verarbeitung meiner personenbezogenen Daten und Gesundheitsdaten zum Zweck der zahnärztlichen Behandlung, Abrechnung und Kommunikation mit Laboren gemäß DSGVO ein.";
 "consent.driving" = "Mir ist bekannt, dass nach einer Behandlung mit Lokalanästhesie oder Sedierung meine Fahrtauglichkeit eingeschränkt sein kann. Ich werde in diesem Fall nicht selbst am Straßenverkehr teilnehmen.";
-"consent.missedAppointment" = "Ich nehme zur Kenntnis, dass bei versäumten Terminen ohne rechtzeitige Absage (mind. 24 Stunden vorher) eine Ausfallgebühr von €%d erhoben wird.";
+"consent.missedAppointment" = "Ich nehme zur Kenntnis, dass bei versäumten Terminen ohne rechtzeitige Absage (mind. 24 Stunden vorher) eine Ausfallgebühr von bis zu €%d erhoben werden kann.";
 "consent.photoTitle" = "Foto-Einwilligungen";
 "consent.agreeAll" = "Allen zustimmen";
 "consent.photoNote" = "Die Einwilligung ist freiwillig und hat keinen Einfluss auf die Qualität Ihrer Behandlung. Sie können Ihre Einwilligung jederzeit widerrufen.";
@@ -270,6 +270,7 @@
 // MARK: - Settings
 "settings_title" = "Einstellungen";
 "clinic_information" = "Praxis-Informationen";
+"default_language" = "Standardsprache";
 "clinic_name" = "Praxisname";
 "subtitle" = "Untertitel";
 "street" = "Straße";
@@ -299,6 +300,21 @@
 "no_pdfs_description" = "Eingereichte Formulare werden hier angezeigt.";
 "delete_pdf" = "PDF löschen?";
 "delete_pdf_message" = "Möchten Sie dieses PDF wirklich löschen? Dies kann nicht rückgängig gemacht werden.";
+"resend_email" = "Erneut senden";
+"email_queued" = "E-Mail wird gesendet";
+"email_queued_message" = "Das PDF wird im Hintergrund an die Praxis-E-Mail gesendet.";
+"smtp_not_configured" = "SMTP nicht konfiguriert";
+"smtp_not_configured_message" = "Bitte konfigurieren Sie die SMTP-Einstellungen, um E-Mails zu senden.";
+
+// MARK: - Kiosk Mode
+"kiosk_section" = "Kiosk-Modus";
+"kiosk_mode" = "iPad auf App sperren";
+"kiosk_footer" = "Sperrt das iPad auf diese App. Patienten können nicht zum Startbildschirm wechseln.";
+"kiosk_setup_title" = "Einrichtung erforderlich";
+"kiosk_setup_instructions" = "1. Öffnen Sie iPad-Einstellungen → Bedienungshilfen → Geführter Zugriff\n2. Aktivieren Sie den Geführten Zugriff\n3. Legen Sie einen Code fest\n4. Kehren Sie hierher zurück und aktivieren Sie den Schalter";
+"kiosk_not_configured" = "Geführter Zugriff nicht eingerichtet";
+"kiosk_not_configured_message" = "Bitte aktivieren Sie den Geführten Zugriff unter iPad-Einstellungen → Bedienungshilfen → Geführter Zugriff.";
+"kiosk_active_status" = "iPad ist gesperrt";
 
 // MARK: - Thank You
 "thankYou.title" = "Vielen Dank!";

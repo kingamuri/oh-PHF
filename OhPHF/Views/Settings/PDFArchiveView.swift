@@ -7,6 +7,9 @@ struct PDFArchiveView: View {
     @State private var pdfToShare: Data?
     @State private var showDeleteConfirmation = false
     @State private var entryToDelete: PDFManifestEntry?
+    @State private var showResendAlert = false
+    @State private var resendAlertTitle = ""
+    @State private var resendAlertMessage = ""
 
     var body: some View {
         Group {
@@ -31,6 +34,13 @@ struct PDFArchiveView: View {
                                     Label(L("share"), systemImage: "square.and.arrow.up")
                                 }
                                 .tint(.blue)
+
+                                Button {
+                                    resendEntry(entry)
+                                } label: {
+                                    Label(L("resend_email"), systemImage: "envelope")
+                                }
+                                .tint(.orange)
                             }
                     }
                 }
@@ -44,6 +54,11 @@ struct PDFArchiveView: View {
             if let data = pdfToShare {
                 ShareSheet(items: [data])
             }
+        }
+        .alert(resendAlertTitle, isPresented: $showResendAlert) {
+            Button("OK", role: .cancel) {}
+        } message: {
+            Text(resendAlertMessage)
         }
         .alert(L("delete_pdf"), isPresented: $showDeleteConfirmation) {
             Button(L("cancel"), role: .cancel) {
@@ -146,6 +161,27 @@ struct PDFArchiveView: View {
         guard let data = PDFStorageService.shared.getPDFData(for: entry) else { return }
         pdfToShare = data
         showShareSheet = true
+    }
+
+    private func resendEntry(_ entry: PDFManifestEntry) {
+        let settings = ClinicSettings.load()
+        guard settings.smtpEnabled, !settings.smtpHost.isEmpty else {
+            resendAlertTitle = L("smtp_not_configured")
+            resendAlertMessage = L("smtp_not_configured_message")
+            showResendAlert = true
+            return
+        }
+        guard let data = PDFStorageService.shared.getPDFData(for: entry) else { return }
+        SMTPService.shared.sendInBackground(
+            pdfData: data,
+            fileName: entry.fileName,
+            recipientEmail: settings.email,
+            patientName: entry.patientName,
+            settings: settings
+        )
+        resendAlertTitle = L("email_queued")
+        resendAlertMessage = L("email_queued_message")
+        showResendAlert = true
     }
 
     private func deleteEntry(_ entry: PDFManifestEntry) {

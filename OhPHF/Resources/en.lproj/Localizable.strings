@@ -248,7 +248,7 @@
 "consent.mandatoryFootnote" = "* Mandatory";
 "consent.gdpr" = "I consent to the processing of my personal data and health data for the purpose of dental treatment, billing, and laboratory communication in accordance with the GDPR.";
 "consent.driving" = "I acknowledge that after treatment with local anesthesia or sedation, my ability to drive may be impaired. I will not drive or operate machinery in such cases.";
-"consent.missedAppointment" = "I acknowledge that missed appointments without timely cancellation (at least 24 hours in advance) will incur a fee of €%d.";
+"consent.missedAppointment" = "I acknowledge that missed appointments without timely cancellation (at least 24 hours in advance) may incur a fee of up to €%d.";
 "consent.photoTitle" = "Photo Consents";
 "consent.agreeAll" = "Agree to all";
 "consent.photoNote" = "Consent is voluntary and does not affect the quality of your treatment. You may withdraw your consent at any time.";
@@ -270,6 +270,7 @@
 // MARK: - Settings
 "settings_title" = "Settings";
 "clinic_information" = "Clinic Information";
+"default_language" = "Default Language";
 "clinic_name" = "Clinic Name";
 "subtitle" = "Subtitle";
 "street" = "Street";
@@ -299,6 +300,21 @@
 "no_pdfs_description" = "Submitted forms will appear here.";
 "delete_pdf" = "Delete PDF?";
 "delete_pdf_message" = "Are you sure you want to delete this PDF? This action cannot be undone.";
+"resend_email" = "Resend";
+"email_queued" = "Email Queued";
+"email_queued_message" = "The PDF is being sent to the clinic email in the background.";
+"smtp_not_configured" = "SMTP Not Configured";
+"smtp_not_configured_message" = "Please configure SMTP settings to send emails.";
+
+// MARK: - Kiosk Mode
+"kiosk_section" = "Kiosk Mode";
+"kiosk_mode" = "Lock iPad to App";
+"kiosk_footer" = "Locks the iPad to this app. Patients cannot access the home screen.";
+"kiosk_setup_title" = "Setup Required";
+"kiosk_setup_instructions" = "1. Open iPad Settings → Accessibility → Guided Access\n2. Turn ON Guided Access\n3. Set a passcode\n4. Return here and enable the toggle";
+"kiosk_not_configured" = "Guided Access Not Set Up";
+"kiosk_not_configured_message" = "Please enable Guided Access in iPad Settings → Accessibility → Guided Access.";
+"kiosk_active_status" = "iPad is locked";
 
 // MARK: - Thank You
 "thankYou.title" = "Thank You!";
