@@ -19,10 +19,13 @@
 // MARK: - Personal Info (Screen 1)
 "personal.title" = "Persönliche Angaben";
 "personal.nameSection" = "Name & Geschlecht";
-"personal.title.Mr" = "Herr";
-"personal.title.Mrs" = "Frau";
-"personal.title.Diverse" = "Divers";
-"personal.title.Child" = "Kind";
+"personal.salutation" = "Anrede";
+"personal.salutation.Mr" = "Herr";
+"personal.salutation.Mrs" = "Frau";
+"personal.salutation.Diverse" = "Divers";
+"personal.salutation.Child" = "Kind";
+"personal.prefixTitles" = "Titel (vorangestellt)";
+"personal.suffixTitles" = "Titel (nachgestellt)";
 "personal.firstName" = "Vorname";
 "personal.lastName" = "Nachname";
 "personal.dateOfBirth" = "Geburtsdatum";
@@ -45,6 +48,8 @@
 "personal.insurance.SelfPay" = "Selbstzahler";
 "personal.insurance.Other" = "Sonstige";
 "personal.insuranceName" = "Name der Versicherung";
+"personal.svNumber" = "Sozialversicherungsnummer";
+"personal.policyNumber" = "Polizzennummer";
 "personal.professionSection" = "Beruf";
 "personal.profession" = "Beruf";
 "personal.emergencySection" = "Notfallkontakt";
@@ -238,20 +243,14 @@
 "consent.title" = "Einwilligungen";
 "consent.submitting" = "Wird verarbeitet...";
 "consent.privacyTitle" = "Datenschutzerklärung";
-"consent.privacyNotice" = "Verantwortlicher für die Verarbeitung Ihrer Daten ist die in den Einstellungen hinterlegte Zahnarztpraxis. Ihre personenbezogenen Daten einschließlich Gesundheitsdaten werden zum Zweck der zahnärztlichen Behandlung, Abrechnung und Kommunikation mit Dentallaboren erhoben und verarbeitet.
-
-Rechtsgrundlage: Art. 6 Abs. 1 lit. b und Art. 9 Abs. 2 lit. h DSGVO; § 19 Zahnärztegesetz (ZAG).
-
-Empfänger: Dentallabore, Sozialversicherungsträger, Fachärzte (bei Überweisung).
-
-Speicherdauer: Ihre Daten werden mindestens 10 Jahre aufbewahrt (§ 19 Abs. 3 ZAG).
-
-Ihre Rechte: Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Beschwerden können an die Österreichische Datenschutzbehörde (dsb.gv.at) gerichtet werden.";
+"consent.privacyNotice" = "Verantwortlicher für die Verarbeitung Ihrer Daten ist die in den Einstellungen hinterlegte Zahnarztpraxis. Ihre personenbezogenen Daten einschließlich Gesundheitsdaten werden zum Zweck der zahnärztlichen Behandlung, Abrechnung und Kommunikation mit Dentallaboren erhoben und verarbeitet.\n\nRechtsgrundlage: Art. 6 Abs. 1 lit. b und Art. 9 Abs. 2 lit. h DSGVO; § 19 Zahnärztegesetz (ZAG).\n\nEmpfänger: Dentallabore, Sozialversicherungsträger, Fachärzte (bei Überweisung).\n\nSpeicherdauer: Ihre Daten werden mindestens 10 Jahre aufbewahrt (§ 19 Abs. 3 ZAG).\n\nIhre Rechte: Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Beschwerden können an die Österreichische Datenschutzbehörde (dsb.gv.at) gerichtet werden.";
 "consent.mandatoryTitle" = "Pflichteinwilligungen";
+"consent.mandatoryFootnote" = "* Pflichtfeld";
 "consent.gdpr" = "Ich willige in die Verarbeitung meiner personenbezogenen Daten und Gesundheitsdaten zum Zweck der zahnärztlichen Behandlung, Abrechnung und Kommunikation mit Laboren gemäß DSGVO ein.";
 "consent.driving" = "Mir ist bekannt, dass nach einer Behandlung mit Lokalanästhesie oder Sedierung meine Fahrtauglichkeit eingeschränkt sein kann. Ich werde in diesem Fall nicht selbst am Straßenverkehr teilnehmen.";
 "consent.missedAppointment" = "Ich nehme zur Kenntnis, dass bei versäumten Terminen ohne rechtzeitige Absage (mind. 24 Stunden vorher) eine Ausfallgebühr von €%d erhoben wird.";
-"consent.photoTitle" = "Foto-Einwilligungen (optional)";
+"consent.photoTitle" = "Foto-Einwilligungen";
+"consent.agreeAll" = "Allen zustimmen";
 "consent.photoNote" = "Die Einwilligung ist freiwillig und hat keinen Einfluss auf die Qualität Ihrer Behandlung. Sie können Ihre Einwilligung jederzeit widerrufen.";
 "consent.photosInternal" = "Ich stimme der Anfertigung und Speicherung von Fotos für die interne zahnärztliche Dokumentation zu.";
 "consent.photosResearch" = "Ich stimme der Verwendung anonymisierter Fotos für wissenschaftliche Veröffentlichungen und Forschung zu.";
@@ -288,11 +287,22 @@ Ihre Rechte: Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschr�
 "security" = "Sicherheit";
 "staff_pin" = "Personal-PIN";
 "pin_footer" = "Der PIN wird benötigt, um die Einstellungen aufzurufen.";
+"smtp_section" = "E-Mail-Versand (SMTP)";
+"smtp_enabled" = "Automatischer E-Mail-Versand";
+"smtp_host" = "SMTP-Server";
+"smtp_port" = "Port";
+"smtp_username" = "Benutzername / E-Mail";
+"smtp_password" = "Passwort / App-Passwort";
+"smtp_footer" = "Für Gmail: smtp.gmail.com, Port 465, App-Passwort verwenden. PDFs werden automatisch an die Praxis-E-Mail gesendet.";
 "pdf_archive" = "PDF-Archiv";
 "no_pdfs" = "Keine PDFs";
 "no_pdfs_description" = "Eingereichte Formulare werden hier angezeigt.";
 "delete_pdf" = "PDF löschen?";
 "delete_pdf_message" = "Möchten Sie dieses PDF wirklich löschen? Dies kann nicht rückgängig gemacht werden.";
+
+// MARK: - Thank You
+"thankYou.title" = "Vielen Dank!";
+"thankYou.message" = "Vielen Dank, dass Sie sich die Zeit genommen haben, das Formular auszufüllen. Bitte nehmen Sie im Wartezimmer Platz.";
 
 // MARK: - Validation
 "validation.firstNameRequired" = "Vorname ist erforderlich.";
@@ -300,4 +310,5 @@ Ihre Rechte: Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschr�
 "validation.gdprRequired" = "Die DSGVO-Einwilligung ist erforderlich.";
 "validation.drivingRequired" = "Die Fahrtauglichkeits-Bestätigung ist erforderlich.";
 "validation.missedAppointmentRequired" = "Die Terminversäumnis-Kenntnisnahme ist erforderlich.";
+"validation.photosInternalRequired" = "Die Einwilligung für Fotos zur internen Dokumentation ist erforderlich.";
 "validation.signatureRequired" = "Eine Unterschrift ist erforderlich.";

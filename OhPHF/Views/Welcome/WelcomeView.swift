@@ -9,14 +9,10 @@ struct WelcomeView: View {
             Spacer()
 
             VStack(spacing: Theme.sectionSpacing) {
-                // MARK: - Clinic Logo
-                clinicLogo
-                    .onLongPressGesture(minimumDuration: 3) {
-                        settingsVM.showPINEntry = true
-                    }
-
-                // MARK: - Clinic Name & Subtitle
+                // MARK: - Clinic Header (triple-tap or long-press → Settings)
                 VStack(spacing: 6) {
+                    clinicLogo
+
                     Text(settingsVM.settings.clinicName)
                         .font(Theme.titleFont)
                         .foregroundStyle(Theme.deepBlue)
@@ -26,6 +22,13 @@ struct WelcomeView: View {
                         .font(Theme.bodyFont)
                         .foregroundStyle(.secondary)
                         .multilineTextAlignment(.center)
+                }
+                .contentShape(Rectangle())
+                .onTapGesture(count: 3) {
+                    settingsVM.showPINEntry = true
+                }
+                .onLongPressGesture(minimumDuration: 3) {
+                    settingsVM.showPINEntry = true
                 }
 
                 // MARK: - Patient Number
@@ -79,14 +82,15 @@ struct WelcomeView: View {
             Image(uiImage: uiImage)
                 .resizable()
                 .scaledToFit()
+                .padding(12)
                 .frame(width: 120, height: 120)
+                .background(Color.white)
                 .clipShape(RoundedRectangle(cornerRadius: Theme.cornerRadius))
         } else {
             Image("oh_icon")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 120, height: 120)
-                .clipShape(RoundedRectangle(cornerRadius: Theme.cornerRadius))
         }
     }
 }

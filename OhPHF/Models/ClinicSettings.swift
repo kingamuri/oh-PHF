@@ -13,6 +13,13 @@ struct ClinicSettings: Codable {
     var missedAppointmentFee: Int = 150
     var staffPIN: String = "1234"
 
+    // SMTP configuration for automatic email delivery
+    var smtpEnabled: Bool = false
+    var smtpHost: String = ""       // e.g. "smtp.gmail.com"
+    var smtpPort: Int = 465         // SSL/TLS port
+    var smtpUsername: String = ""   // e.g. "clinic@gmail.com"
+    var smtpPassword: String = ""   // App password (not regular password)
+
     var fullAddress: String {
         var components: [String] = []
         if !street.isEmpty {

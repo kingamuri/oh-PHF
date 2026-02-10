@@ -2,6 +2,20 @@ import UIKit
 
 struct PDFGeneratorService {
 
+    /// Load a localized string for the patient's chosen language (safe to call off MainActor).
+    private static func localizedString(_ key: String, language: String) -> String {
+        guard let path = Bundle.main.path(forResource: language, ofType: "lproj"),
+              let bundle = Bundle(path: path) else {
+            return key
+        }
+        return bundle.localizedString(forKey: key, value: key, table: nil)
+    }
+
+    private static func localizedString(_ key: String, language: String, _ args: CVarArg...) -> String {
+        let format = localizedString(key, language: language)
+        return String(format: format, arguments: args)
+    }
+
     // MARK: - Public
 
     static func generatePDF(form: PatientForm, settings: ClinicSettings) -> Data {
@@ -131,7 +145,8 @@ struct PDFGeneratorService {
             drawSectionHeader("Personal Information")
 
             let pi = form.personalInfo
-            drawField(label: "Name", value: "\(pi.title.rawValue) \(pi.firstName) \(pi.lastName)")
+            drawField(label: "Salutation", value: pi.salutation.rawValue)
+            drawField(label: "Name", value: pi.fullName)
 
             if let dob = pi.dateOfBirth {
                 let df = DateFormatter()
@@ -148,6 +163,7 @@ struct PDFGeneratorService {
             drawField(label: "Phone", value: pi.phone)
             drawField(label: "Email", value: pi.email)
             drawField(label: "Insurance", value: "\(pi.insuranceType.rawValue) - \(pi.insuranceName)")
+            drawField(label: pi.insuranceType == .public ? "SV-Nr." : "Policy No.", value: pi.insuranceNumber)
             drawField(label: "Profession", value: pi.profession)
 
             if !pi.emergencyContactName.isEmpty {
@@ -346,35 +362,50 @@ struct PDFGeneratorService {
 
             // MARK: Consents
 
-            drawSectionHeader("Consents")
+            let lang = form.language
+
+            drawSectionHeader(localizedString("consent.title", language: lang))
+
+            // Privacy Notice (full text for legal record)
+            drawText(
+                localizedString("consent.privacyTitle", language: lang),
+                font: .boldSystemFont(ofSize: 10)
+            )
+            drawText(
+                localizedString("consent.privacyNotice", language: lang),
+                font: .systemFont(ofSize: 8),
+                color: .darkGray
+            )
+            yPosition += 5
 
             let consent = form.consentInfo
             let checkmark = "\u{2713}"
             let xmark = "\u{2717}"
 
+            // Each consent with exact text as shown to the patient
             drawText(
-                "\(consent.gdprConsent ? checkmark : xmark) GDPR consent for medical data processing",
-                font: .systemFont(ofSize: 10)
+                "\(consent.gdprConsent ? checkmark : xmark) \(localizedString("consent.gdpr", language: lang))",
+                font: .systemFont(ofSize: 9)
             )
             drawText(
-                "\(consent.drivingAcknowledgment ? checkmark : xmark) Anesthesia/driving impairment acknowledged",
-                font: .systemFont(ofSize: 10)
+                "\(consent.drivingAcknowledgment ? checkmark : xmark) \(localizedString("consent.driving", language: lang))",
+                font: .systemFont(ofSize: 9)
             )
             drawText(
-                "\(consent.missedAppointmentConsent ? checkmark : xmark) Missed appointment fee (\u{20AC}\(settings.missedAppointmentFee))",
-                font: .systemFont(ofSize: 10)
+                "\(consent.missedAppointmentConsent ? checkmark : xmark) \(localizedString("consent.missedAppointment", language: lang, settings.missedAppointmentFee))",
+                font: .systemFont(ofSize: 9)
             )
             drawText(
-                "\(consent.photosInternal ? checkmark : xmark) Photos for internal documentation",
-                font: .systemFont(ofSize: 10)
+                "\(consent.photosInternal ? checkmark : xmark) \(localizedString("consent.photosInternal", language: lang))",
+                font: .systemFont(ofSize: 9)
             )
             drawText(
-                "\(consent.photosResearch ? checkmark : xmark) Photos for research/publications",
-                font: .systemFont(ofSize: 10)
+                "\(consent.photosResearch ? checkmark : xmark) \(localizedString("consent.photosResearch", language: lang))",
+                font: .systemFont(ofSize: 9)
             )
             drawText(
-                "\(consent.photosMarketing ? checkmark : xmark) Photos for website/social media",
-                font: .systemFont(ofSize: 10)
+                "\(consent.photosMarketing ? checkmark : xmark) \(localizedString("consent.photosMarketing", language: lang))",
+                font: .systemFont(ofSize: 9)
             )
 
             // MARK: Signature
@@ -382,10 +413,16 @@ struct PDFGeneratorService {
             yPosition += 10
 
             if let sigData = form.signatureData, let sigImage = UIImage(data: sigData) {
-                checkPageBreak(needed: 80)
+                let maxSigWidth: CGFloat = 250
+                let maxSigHeight: CGFloat = 120
+                let aspect = sigImage.size.width / max(sigImage.size.height, 1)
+                let sigWidth = min(maxSigWidth, maxSigHeight * aspect)
+                let sigHeight = sigWidth / max(aspect, 0.1)
+
+                checkPageBreak(needed: sigHeight + 30)
                 drawText("Patient Signature:", font: .boldSystemFont(ofSize: 10))
-                sigImage.draw(in: CGRect(x: margin, y: yPosition, width: 200, height: 60))
-                yPosition += 65
+                sigImage.draw(in: CGRect(x: margin, y: yPosition, width: sigWidth, height: sigHeight))
+                yPosition += sigHeight + 10
             }
 
             if let date = form.submissionDate {

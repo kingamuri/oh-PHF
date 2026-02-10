@@ -23,19 +23,37 @@ struct PersonalInfoView: View {
                                 .font(Theme.headlineFont)
                                 .foregroundStyle(Theme.deepBlue)
 
-                            // Title
+                            // Salutation (Mr/Mrs/Diverse/Child)
                             HStack {
-                                Text(L("personal.title"))
+                                Text(L("personal.salutation"))
                                     .font(Theme.bodyFont)
                                     .foregroundStyle(Theme.deepBlue)
                                 Spacer()
-                                Picker(L("personal.title"), selection: info.title) {
-                                    ForEach(PersonalInfo.Title.allCases, id: \.self) { title in
-                                        Text(L("personal.title.\(title.rawValue)")).tag(title)
+                                Picker(L("personal.salutation"), selection: info.salutation) {
+                                    ForEach(PersonalInfo.Salutation.allCases, id: \.self) { s in
+                                        Text(L("personal.salutation.\(s.rawValue)")).tag(s)
                                     }
                                 }
                                 .labelsHidden()
                                 .tint(Theme.accentBlue)
+                            }
+
+                            // Prefix Titles (before name)
+                            VStack(alignment: .leading, spacing: 6) {
+                                Text(L("personal.prefixTitles"))
+                                    .font(Theme.bodyFont)
+                                    .foregroundStyle(Theme.deepBlue)
+
+                                FlowLayout(spacing: 8) {
+                                    ForEach(PersonalInfo.PrefixTitle.allCases, id: \.self) { title in
+                                        titleChip(
+                                            title.rawValue,
+                                            isSelected: formVM.form.personalInfo.prefixTitles.contains(title)
+                                        ) {
+                                            togglePrefix(title)
+                                        }
+                                    }
+                                }
                             }
 
                             // First Name
@@ -45,6 +63,24 @@ struct PersonalInfoView: View {
                             // Last Name
                             TextField(L("personal.lastName"), text: info.lastName)
                                 .textFieldStyle(.roundedBorder)
+
+                            // Suffix Titles (after name)
+                            VStack(alignment: .leading, spacing: 6) {
+                                Text(L("personal.suffixTitles"))
+                                    .font(Theme.bodyFont)
+                                    .foregroundStyle(Theme.deepBlue)
+
+                                FlowLayout(spacing: 8) {
+                                    ForEach(PersonalInfo.SuffixTitle.allCases, id: \.self) { title in
+                                        titleChip(
+                                            title.rawValue,
+                                            isSelected: formVM.form.personalInfo.suffixTitles.contains(title)
+                                        ) {
+                                            toggleSuffix(title)
+                                        }
+                                    }
+                                }
+                            }
 
                             // Date of Birth
                             DatePicker(
@@ -153,6 +189,14 @@ struct PersonalInfoView: View {
 
                             TextField(L("personal.insuranceName"), text: info.insuranceName)
                                 .textFieldStyle(.roundedBorder)
+
+                            TextField(
+                                formVM.form.personalInfo.insuranceType == .public
+                                    ? L("personal.svNumber")
+                                    : L("personal.policyNumber"),
+                                text: info.insuranceNumber
+                            )
+                            .textFieldStyle(.roundedBorder)
                         }
                     }
 
@@ -186,7 +230,9 @@ struct PersonalInfoView: View {
                 }
                 .frame(maxWidth: Theme.maxFormWidth)
                 .padding()
+                .padding(.top, 8)
             }
+            .scrollIndicators(.visible)
 
             // MARK: - Navigation Bar
             FormNavigationBar(
@@ -219,6 +265,42 @@ struct PersonalInfoView: View {
                     }
                 }
             }
+        }
+    }
+
+    // MARK: - Title Chip
+
+    private func titleChip(_ label: String, isSelected: Bool, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            Text(label)
+                .font(Theme.captionFont)
+                .foregroundStyle(isSelected ? .white : Theme.deepBlue)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 6)
+                .background(
+                    isSelected ? Theme.accentBlue : Color.clear,
+                    in: Capsule()
+                )
+                .overlay(
+                    Capsule().stroke(isSelected ? Theme.accentBlue : Theme.softGray, lineWidth: 1)
+                )
+        }
+        .buttonStyle(.plain)
+    }
+
+    private func togglePrefix(_ title: PersonalInfo.PrefixTitle) {
+        if let idx = formVM.form.personalInfo.prefixTitles.firstIndex(of: title) {
+            formVM.form.personalInfo.prefixTitles.remove(at: idx)
+        } else {
+            formVM.form.personalInfo.prefixTitles.append(title)
+        }
+    }
+
+    private func toggleSuffix(_ title: PersonalInfo.SuffixTitle) {
+        if let idx = formVM.form.personalInfo.suffixTitles.firstIndex(of: title) {
+            formVM.form.personalInfo.suffixTitles.remove(at: idx)
+        } else {
+            formVM.form.personalInfo.suffixTitles.append(title)
         }
     }
 

@@ -12,6 +12,7 @@ struct SettingsView: View {
                 clinicInfoSection
                 logoSection
                 feesSection
+                smtpSection
                 securitySection
                 archiveSection
             }
@@ -116,6 +117,45 @@ struct SettingsView: View {
             }
         } header: {
             Text(L("fees"))
+        }
+    }
+
+    private var smtpSection: some View {
+        Section {
+            Toggle(L("smtp_enabled"), isOn: $settingsVM.settings.smtpEnabled)
+                .tint(.blue)
+
+            if settingsVM.settings.smtpEnabled {
+                TextField(L("smtp_host"), text: $settingsVM.settings.smtpHost)
+                    .autocapitalization(.none)
+                    .autocorrectionDisabled()
+
+                HStack {
+                    Text(L("smtp_port"))
+                    Spacer()
+                    TextField(
+                        "465",
+                        value: $settingsVM.settings.smtpPort,
+                        format: .number
+                    )
+                    .keyboardType(.numberPad)
+                    .multilineTextAlignment(.trailing)
+                    .frame(width: 80)
+                }
+
+                TextField(L("smtp_username"), text: $settingsVM.settings.smtpUsername)
+                    .autocapitalization(.none)
+                    .autocorrectionDisabled()
+                    .textContentType(.emailAddress)
+                    .keyboardType(.emailAddress)
+
+                SecureField(L("smtp_password"), text: $settingsVM.settings.smtpPassword)
+            }
+        } header: {
+            Text(L("smtp_section"))
+        } footer: {
+            Text(L("smtp_footer"))
+                .font(.caption)
         }
     }
 

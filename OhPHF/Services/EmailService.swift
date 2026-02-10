@@ -1,6 +1,10 @@
 import SwiftUI
 import MessageUI
 
+// MARK: - EmailComposerView
+
+/// Mail composer for sharing PDFs from the archive.
+/// Used by staff in the PDF Archive view, NOT during patient submission.
 struct EmailComposerView: UIViewControllerRepresentable {
     let pdfData: Data
     let recipientEmail: String
@@ -10,8 +14,6 @@ struct EmailComposerView: UIViewControllerRepresentable {
     static var canSendMail: Bool {
         MFMailComposeViewController.canSendMail()
     }
-
-    // MARK: - UIViewControllerRepresentable
 
     func makeUIViewController(context: Context) -> MFMailComposeViewController {
         let composer = MFMailComposeViewController()
@@ -32,9 +34,7 @@ struct EmailComposerView: UIViewControllerRepresentable {
     func updateUIViewController(
         _ uiViewController: MFMailComposeViewController,
         context: Context
-    ) {
-        // No updates needed
-    }
+    ) {}
 
     func makeCoordinator() -> Coordinator {
         Coordinator(onDismiss: onDismiss)

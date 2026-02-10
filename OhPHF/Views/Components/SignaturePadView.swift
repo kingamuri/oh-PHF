@@ -11,11 +11,6 @@ struct SignaturePadView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            // Label
-            Text(L("signature"))
-                .font(Theme.headlineFont)
-                .foregroundStyle(Theme.deepBlue)
-
             // Canvas
             SignatureCanvas(
                 canvasView: $canvasView,

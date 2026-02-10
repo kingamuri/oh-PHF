@@ -6,9 +6,8 @@ final class FormViewModel: ObservableObject {
     @Published var currentPage: Int = 0  // 0=Welcome, 1-8=form pages
     @Published var navigatingForward: Bool = true
     @Published var isSubmitting: Bool = false
-    @Published var showMailComposer: Bool = false
+    @Published var showThankYou: Bool = false
     @Published var generatedPDFData: Data?
-    @Published var showSubmissionSuccess: Bool = false
     @Published var validationErrors: [String] = []
 
     let totalPages = 9  // 0=welcome + 8 form pages
@@ -97,6 +96,9 @@ final class FormViewModel: ObservableObject {
             if !form.consentInfo.missedAppointmentConsent {
                 validationErrors.append(L("validation.missedAppointmentRequired"))
             }
+            if !form.consentInfo.photosInternal {
+                validationErrors.append(L("validation.photosInternalRequired"))
+            }
             if form.signatureData == nil {
                 validationErrors.append(L("validation.signatureRequired"))
             }
@@ -126,8 +128,27 @@ final class FormViewModel: ObservableObject {
                 : nil
         )
 
+        // Send email in the background (best-effort, fire-and-forget)
+        let sanitizedName = "\(form.personalInfo.firstName) \(form.personalInfo.lastName)"
+            .replacingOccurrences(of: " ", with: "_")
+            .replacingOccurrences(of: "/", with: "-")
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyyMMdd_HHmm"
+        let fileName = "PHF_\(sanitizedName)_\(formatter.string(from: Date())).pdf"
+
+        SMTPService.shared.sendInBackground(
+            pdfData: pdfData,
+            fileName: fileName,
+            recipientEmail: settings.email,
+            patientName: "\(form.personalInfo.firstName) \(form.personalInfo.lastName)",
+            settings: settings
+        )
+
         isSubmitting = false
-        showMailComposer = true
+
+        // Show thank you screen — auto-resets after delay
+        showThankYou = true
+        scheduleReset()
     }
 
     func reset() {
@@ -135,9 +156,15 @@ final class FormViewModel: ObservableObject {
         currentPage = 0
         navigatingForward = true
         isSubmitting = false
-        showMailComposer = false
+        showThankYou = false
         generatedPDFData = nil
-        showSubmissionSuccess = false
         validationErrors = []
+    }
+
+    private func scheduleReset() {
+        Task {
+            try? await Task.sleep(for: .seconds(5))
+            reset()
+        }
     }
 }

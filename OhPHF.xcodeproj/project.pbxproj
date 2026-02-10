@@ -13,6 +13,7 @@
 		0FAEA3F80C264BFB24193821 /* GlassCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087B74B335F426659C2DBD5D /* GlassCard.swift */; };
 		12FC8C3B7ADAEAEE508F96E2 /* PatientForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33470642EFB8EBC01996636 /* PatientForm.swift */; };
 		142488E44E015E7501BF0832 /* PDFArchiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D68A29A0C0D711DBF41D84A /* PDFArchiveView.swift */; };
+		16F91E8188CC7C4DF383E8CF /* SMTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B969451D17BFF064272C30 /* SMTPService.swift */; };
 		1899F779C94403633D0C3FF9 /* FormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA77C161AAEB890D6CA997F2 /* FormViewModel.swift */; };
 		224C2D7E4F4D23BDA4BAC684 /* PDFStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D44F2930167E1A950A9A3F /* PDFStorageService.swift */; };
 		2889F98173E93FC55C3A7C66 /* PinEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4116E42E309B959344BC73 /* PinEntryView.swift */; };
@@ -38,6 +39,7 @@
 		D1F48621753BCE62F7A83A6D /* YesNoToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6B827083A38D04E72B9BFC /* YesNoToggle.swift */; };
 		D30A690E1467130F9465F1BC /* SkyBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2429EDFC9B5685D192B39B8 /* SkyBackground.swift */; };
 		D39D3AD9EBF3E3AED2AC0657 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3348744FC8DEB363ECB3477E /* Assets.xcassets */; };
+		E40CE6193F400363C0421693 /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6D9486F961978D5491AB3C /* FlowLayout.swift */; };
 		E4C2F8B612D567CEBCB6EDC5 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182822904C88DB2A398F9587 /* Theme.swift */; };
 		F16FB27EF7AC8D38E5EEB0D8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20036B99EF7BC6B03FCA3BB /* SettingsView.swift */; };
 		F2CC07CDDC68FA706A43CF00 /* BDDScorer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5705B74FF9A33EBB7C3304 /* BDDScorer.swift */; };
@@ -57,7 +59,9 @@
 		3348744FC8DEB363ECB3477E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33B55CCC787B076B7EA7B0D2 /* FormNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormNavigationBar.swift; sourceTree = "<group>"; };
 		4959A2598D2F225FA6246BF3 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4E6D9486F961978D5491AB3C /* FlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowLayout.swift; sourceTree = "<group>"; };
 		52A319E40229A029A849626F /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
+		55B969451D17BFF064272C30 /* SMTPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMTPService.swift; sourceTree = "<group>"; };
 		55E68C38ED9EB84A264C7723 /* OhPHFApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OhPHFApp.swift; sourceTree = "<group>"; };
 		58CB2254E47551BA3757BE8A /* ConditionalSubform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionalSubform.swift; sourceTree = "<group>"; };
 		68D4832519F976DD71C72525 /* SignaturePadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignaturePadView.swift; sourceTree = "<group>"; };
@@ -89,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				58CB2254E47551BA3757BE8A /* ConditionalSubform.swift */,
+				4E6D9486F961978D5491AB3C /* FlowLayout.swift */,
 				33B55CCC787B076B7EA7B0D2 /* FormNavigationBar.swift */,
 				087B74B335F426659C2DBD5D /* GlassCard.swift */,
 				76A0391F8CC4F89F9368EBF1 /* LanguagePicker.swift */,
@@ -234,6 +239,7 @@
 				FA398EEF4ACD06199B8FB23E /* EmailService.swift */,
 				F97EF349B9339571406F203D /* PDFGeneratorService.swift */,
 				19D44F2930167E1A950A9A3F /* PDFStorageService.swift */,
+				55B969451D17BFF064272C30 /* SMTPService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -266,7 +272,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 2600;
+				LastUpgradeCheck = 1430;
 			};
 			buildConfigurationList = BAE79165E43BDDA732843D81 /* Build configuration list for PBXProject "OhPHF" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -315,6 +321,7 @@
 				5B04FCC76BD36689ADB3A3E3 /* ContentView.swift in Sources */,
 				4376D2B6AD2A2939E440EFA1 /* DentalHistoryView.swift in Sources */,
 				B2FD09BCED1D49B1E44FD238 /* EmailService.swift in Sources */,
+				E40CE6193F400363C0421693 /* FlowLayout.swift in Sources */,
 				60B017A1843A72CD46EEA2D2 /* FormNavigationBar.swift in Sources */,
 				1899F779C94403633D0C3FF9 /* FormViewModel.swift in Sources */,
 				0FAEA3F80C264BFB24193821 /* GlassCard.swift in Sources */,
@@ -331,6 +338,7 @@
 				A8F0F4289CA7DAE4C90FCDE5 /* PersonalInfoView.swift in Sources */,
 				2889F98173E93FC55C3A7C66 /* PinEntryView.swift in Sources */,
 				891FF6837CA3268677F4C818 /* ProgressBarView.swift in Sources */,
+				16F91E8188CC7C4DF383E8CF /* SMTPService.swift in Sources */,
 				F16FB27EF7AC8D38E5EEB0D8 /* SettingsView.swift in Sources */,
 				0B2F263E497AF2B6AAE01E52 /* SettingsViewModel.swift in Sources */,
 				70A8871BB6D12B930EB74D0D /* SignaturePadView.swift in Sources */,
@@ -410,7 +418,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -496,7 +504,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;

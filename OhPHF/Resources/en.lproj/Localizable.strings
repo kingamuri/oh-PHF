@@ -19,10 +19,13 @@
 // MARK: - Personal Info
 "personal.title" = "Personal Information";
 "personal.nameSection" = "Name & Gender";
-"personal.title.Mr" = "Mr";
-"personal.title.Mrs" = "Mrs";
-"personal.title.Diverse" = "Diverse";
-"personal.title.Child" = "Child";
+"personal.salutation" = "Salutation";
+"personal.salutation.Mr" = "Mr";
+"personal.salutation.Mrs" = "Mrs";
+"personal.salutation.Diverse" = "Diverse";
+"personal.salutation.Child" = "Child";
+"personal.prefixTitles" = "Titles (before name)";
+"personal.suffixTitles" = "Titles (after name)";
 "personal.firstName" = "First Name";
 "personal.lastName" = "Last Name";
 "personal.dateOfBirth" = "Date of Birth";
@@ -45,6 +48,8 @@
 "personal.insurance.SelfPay" = "Self-Pay";
 "personal.insurance.Other" = "Other";
 "personal.insuranceName" = "Insurance Name";
+"personal.svNumber" = "Social Security Number";
+"personal.policyNumber" = "Policy Number";
 "personal.professionSection" = "Profession";
 "personal.profession" = "Profession";
 "personal.emergencySection" = "Emergency Contact";
@@ -238,20 +243,14 @@
 "consent.title" = "Consents";
 "consent.submitting" = "Processing...";
 "consent.privacyTitle" = "Privacy Notice";
-"consent.privacyNotice" = "The data controller is the dental practice specified in the settings. Your personal data including health data is collected and processed for the purpose of dental treatment, billing, and communication with dental laboratories.
-
-Legal basis: Art. 6(1)(b) and Art. 9(2)(h) GDPR; Section 19 Austrian Dental Act (ZAG).
-
-Recipients: Dental laboratories, social insurance carriers, specialists (in case of referral).
-
-Retention period: Your data will be retained for at least 10 years (Section 19(3) ZAG).
-
-Your rights: You have the right to access, rectification, erasure, restriction of processing, data portability, and objection. Complaints may be directed to the Austrian Data Protection Authority (dsb.gv.at).";
+"consent.privacyNotice" = "The data controller is the dental practice specified in the settings. Your personal data including health data is collected and processed for the purpose of dental treatment, billing, and communication with dental laboratories.\n\nLegal basis: Art. 6(1)(b) and Art. 9(2)(h) GDPR; Section 19 Austrian Dental Act (ZAG).\n\nRecipients: Dental laboratories, social insurance carriers, specialists (in case of referral).\n\nRetention period: Your data will be retained for at least 10 years (Section 19(3) ZAG).\n\nYour rights: You have the right to access, rectification, erasure, restriction of processing, data portability, and objection. Complaints may be directed to the Austrian Data Protection Authority (dsb.gv.at).";
 "consent.mandatoryTitle" = "Mandatory Consents";
+"consent.mandatoryFootnote" = "* Mandatory";
 "consent.gdpr" = "I consent to the processing of my personal data and health data for the purpose of dental treatment, billing, and laboratory communication in accordance with the GDPR.";
 "consent.driving" = "I acknowledge that after treatment with local anesthesia or sedation, my ability to drive may be impaired. I will not drive or operate machinery in such cases.";
 "consent.missedAppointment" = "I acknowledge that missed appointments without timely cancellation (at least 24 hours in advance) will incur a fee of €%d.";
-"consent.photoTitle" = "Photo Consents (optional)";
+"consent.photoTitle" = "Photo Consents";
+"consent.agreeAll" = "Agree to all";
 "consent.photoNote" = "Consent is voluntary and does not affect the quality of your treatment. You may withdraw your consent at any time.";
 "consent.photosInternal" = "I consent to photographs being taken and stored for internal dental documentation.";
 "consent.photosResearch" = "I consent to the use of anonymized photographs for scientific publications and research.";
@@ -288,11 +287,22 @@ Your rights: You have the right to access, rectification, erasure, restriction o
 "security" = "Security";
 "staff_pin" = "Staff PIN";
 "pin_footer" = "The PIN is required to access settings.";
+"smtp_section" = "Email Delivery (SMTP)";
+"smtp_enabled" = "Automatic email delivery";
+"smtp_host" = "SMTP Server";
+"smtp_port" = "Port";
+"smtp_username" = "Username / Email";
+"smtp_password" = "Password / App Password";
+"smtp_footer" = "For Gmail: smtp.gmail.com, port 465, use an App Password. PDFs are automatically sent to the clinic email.";
 "pdf_archive" = "PDF Archive";
 "no_pdfs" = "No PDFs";
 "no_pdfs_description" = "Submitted forms will appear here.";
 "delete_pdf" = "Delete PDF?";
 "delete_pdf_message" = "Are you sure you want to delete this PDF? This action cannot be undone.";
+
+// MARK: - Thank You
+"thankYou.title" = "Thank You!";
+"thankYou.message" = "Thank you for taking the time to fill out the form. Please take a seat in the waiting area.";
 
 // MARK: - Validation
 "validation.firstNameRequired" = "First name is required.";
@@ -300,4 +310,5 @@ Your rights: You have the right to access, rectification, erasure, restriction o
 "validation.gdprRequired" = "GDPR consent is required.";
 "validation.drivingRequired" = "Driving impairment acknowledgment is required.";
 "validation.missedAppointmentRequired" = "Missed appointment acknowledgment is required.";
+"validation.photosInternalRequired" = "Consent for internal documentation photos is required.";
 "validation.signatureRequired" = "A signature is required.";

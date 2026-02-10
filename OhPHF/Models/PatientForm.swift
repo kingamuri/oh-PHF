@@ -20,7 +20,9 @@ struct PatientForm: Codable {
 // MARK: - PersonalInfo
 
 struct PersonalInfo: Codable {
-    var title: Title = .mr
+    var salutation: Salutation = .mr
+    var prefixTitles: [PrefixTitle] = []
+    var suffixTitles: [SuffixTitle] = []
     var firstName: String = ""
     var lastName: String = ""
     var dateOfBirth: Date?
@@ -33,15 +35,47 @@ struct PersonalInfo: Codable {
     var email: String = ""
     var insuranceType: InsuranceType = .public
     var insuranceName: String = ""
+    var insuranceNumber: String = ""
     var profession: String = ""
     var emergencyContactName: String = ""
     var emergencyContactPhone: String = ""
 
-    enum Title: String, Codable, CaseIterable {
+    /// Full formatted name: "Prof. Dipl.-Ing. DDr. Rudolf Seemann MBA, PhD"
+    var fullName: String {
+        var parts: [String] = []
+        let prefixes = prefixTitles.map(\.rawValue).joined(separator: " ")
+        if !prefixes.isEmpty { parts.append(prefixes) }
+        parts.append(firstName)
+        parts.append(lastName)
+        let suffixes = suffixTitles.map(\.rawValue).joined(separator: ", ")
+        if !suffixes.isEmpty { parts.append(suffixes) }
+        return parts.joined(separator: " ")
+    }
+
+    enum Salutation: String, Codable, CaseIterable {
         case mr = "Mr"
         case mrs = "Mrs"
         case diverse = "Diverse"
         case child = "Child"
+    }
+
+    enum PrefixTitle: String, Codable, CaseIterable {
+        case ing = "Ing."
+        case dr = "Dr."
+        case ddr = "DDr."
+        case prof = "Prof."
+        case privDoz = "Priv. Doz."
+        case mag = "Mag."
+        case diplIng = "Dipl.-Ing."
+    }
+
+    enum SuffixTitle: String, Codable, CaseIterable {
+        case ba = "BA"
+        case bsc = "BSc"
+        case msc = "MSc"
+        case ma = "MA"
+        case mba = "MBA"
+        case phd = "PhD"
     }
 
     enum Gender: String, Codable, CaseIterable {

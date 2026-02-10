@@ -8,6 +8,12 @@ struct ConsentsView: View {
         $formVM.form.consentInfo
     }
 
+    private var allAgreed: Bool {
+        let c = formVM.form.consentInfo
+        return c.gdprConsent && c.drivingAcknowledgment && c.missedAppointmentConsent
+            && c.photosInternal && c.photosResearch && c.photosMarketing
+    }
+
     var body: some View {
         ZStack {
             VStack(spacing: 0) {
@@ -21,11 +27,8 @@ struct ConsentsView: View {
                         // MARK: - Privacy Notice
                         privacyNoticeSection
 
-                        // MARK: - Mandatory Consents
-                        mandatoryConsentsSection
-
-                        // MARK: - Optional Photo Consents
-                        photoConsentsSection
+                        // MARK: - All Consents (single card)
+                        consentsSection
 
                         // MARK: - Signature
                         signatureSection
@@ -75,18 +78,6 @@ struct ConsentsView: View {
             }
         }
         .animation(.easeInOut(duration: 0.3), value: formVM.isSubmitting)
-        .sheet(isPresented: $formVM.showMailComposer) {
-            if let pdfData = formVM.generatedPDFData {
-                EmailComposerView(
-                    pdfData: pdfData,
-                    recipientEmail: settingsVM.settings.email,
-                    patientName: "\(formVM.form.personalInfo.firstName) \(formVM.form.personalInfo.lastName)",
-                    onDismiss: {
-                        formVM.reset()
-                    }
-                )
-            }
-        }
     }
 
     // MARK: - Privacy Notice Section
@@ -101,7 +92,7 @@ struct ConsentsView: View {
                 ScrollView {
                     Text(L("consent.privacyNotice"))
                         .font(Theme.captionFont)
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(Theme.deepBlue.opacity(0.7))
                         .fixedSize(horizontal: false, vertical: true)
                 }
                 .frame(maxHeight: 200)
@@ -109,81 +100,91 @@ struct ConsentsView: View {
         }
     }
 
-    // MARK: - Mandatory Consents Section
+    // MARK: - All Consents in One Card
 
-    private var mandatoryConsentsSection: some View {
+    private var consentsSection: some View {
         GlassCard {
             VStack(alignment: .leading, spacing: Theme.sectionSpacing) {
-                Text(L("consent.mandatoryTitle"))
+                Text(L("consent.title"))
                     .font(Theme.headlineFont)
                     .foregroundStyle(Theme.deepBlue)
 
-                // GDPR Consent
+                // GDPR *
                 consentToggle(
                     text: L("consent.gdpr"),
                     isOn: consent.gdprConsent,
-                    isRequired: true
+                    isMandatory: true
                 )
 
                 Divider()
 
-                // Driving Acknowledgment
+                // Driving *
                 consentToggle(
                     text: L("consent.driving"),
                     isOn: consent.drivingAcknowledgment,
-                    isRequired: true
+                    isMandatory: true
                 )
 
                 Divider()
 
-                // Missed Appointment Fee
+                // Missed Appointment *
                 consentToggle(
                     text: L("consent.missedAppointment", settingsVM.settings.missedAppointmentFee),
                     isOn: consent.missedAppointmentConsent,
-                    isRequired: true
+                    isMandatory: true
                 )
-            }
-        }
-    }
 
-    // MARK: - Photo Consents Section
+                Divider()
 
-    private var photoConsentsSection: some View {
-        GlassCard {
-            VStack(alignment: .leading, spacing: Theme.sectionSpacing) {
-                Text(L("consent.photoTitle"))
-                    .font(Theme.headlineFont)
-                    .foregroundStyle(Theme.deepBlue)
-
-                Text(L("consent.photoNote"))
-                    .font(Theme.captionFont)
-                    .foregroundStyle(.secondary)
-                    .fixedSize(horizontal: false, vertical: true)
-
-                // Internal documentation
+                // Photos: internal *
                 consentToggle(
                     text: L("consent.photosInternal"),
                     isOn: consent.photosInternal,
-                    isRequired: false
+                    isMandatory: true
                 )
 
                 Divider()
 
-                // Research / publications
+                // Photos: research
                 consentToggle(
                     text: L("consent.photosResearch"),
-                    isOn: consent.photosResearch,
-                    isRequired: false
+                    isOn: consent.photosResearch
                 )
 
                 Divider()
 
-                // Marketing
+                // Photos: marketing
                 consentToggle(
                     text: L("consent.photosMarketing"),
-                    isOn: consent.photosMarketing,
-                    isRequired: false
+                    isOn: consent.photosMarketing
                 )
+
+                Divider()
+
+                // * Mandatory footnote
+                Text(L("consent.mandatoryFootnote"))
+                    .font(Theme.captionFont)
+                    .foregroundStyle(.red)
+
+                Divider()
+
+                // Agree to all
+                Toggle(isOn: Binding(
+                    get: { allAgreed },
+                    set: { newValue in
+                        formVM.form.consentInfo.gdprConsent = newValue
+                        formVM.form.consentInfo.drivingAcknowledgment = newValue
+                        formVM.form.consentInfo.missedAppointmentConsent = newValue
+                        formVM.form.consentInfo.photosInternal = newValue
+                        formVM.form.consentInfo.photosResearch = newValue
+                        formVM.form.consentInfo.photosMarketing = newValue
+                    }
+                )) {
+                    Text(L("consent.agreeAll"))
+                        .font(Theme.bodyFont.weight(.semibold))
+                        .foregroundStyle(Theme.deepBlue)
+                }
+                .tint(Theme.accentBlue)
             }
         }
     }
@@ -220,11 +221,11 @@ struct ConsentsView: View {
     private func consentToggle(
         text: String,
         isOn: Binding<Bool>,
-        isRequired: Bool
+        isMandatory: Bool = false
     ) -> some View {
         Toggle(isOn: isOn) {
-            HStack(alignment: .top, spacing: 4) {
-                if isRequired {
+            HStack(alignment: .top, spacing: 2) {
+                if isMandatory {
                     Text("*")
                         .font(Theme.bodyFont)
                         .foregroundStyle(.red)
