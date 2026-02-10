@@ -21,10 +21,7 @@ struct SignaturePadView: View {
                 Color.white,
                 in: RoundedRectangle(cornerRadius: Theme.cornerRadius)
             )
-            .overlay(
-                RoundedRectangle(cornerRadius: Theme.cornerRadius)
-                    .stroke(Theme.softGray, lineWidth: 1)
-            )
+            .glassBackground(.regular, in: RoundedRectangle(cornerRadius: Theme.cornerRadius))
             .clipShape(RoundedRectangle(cornerRadius: Theme.cornerRadius))
 
             // Instruction + Clear
@@ -44,6 +41,9 @@ struct SignaturePadView: View {
                             .font(Theme.captionFont)
                     }
                     .foregroundStyle(Theme.accentBlue)
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 6)
+                    .glassBackground(.interactive, in: Capsule())
                 }
                 .buttonStyle(.plain)
                 .opacity(hasDrawing ? 1 : 0.4)

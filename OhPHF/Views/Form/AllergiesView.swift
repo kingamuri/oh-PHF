@@ -35,7 +35,7 @@ struct AllergiesView: View {
                                         L("allergies.otherPlaceholder"),
                                         text: allergyInfo.otherAllergyText
                                     )
-                                    .textFieldStyle(.roundedBorder)
+                                    .glassField()
                                 }
                             }
                         }
@@ -85,7 +85,13 @@ struct AllergiesView: View {
 
                 Spacer()
             }
-            .contentShape(Rectangle())
+            .padding(10)
+            .glassBackground(
+                isSelected
+                    ? .interactiveTinted(Theme.accentBlue.opacity(0.15))
+                    : .interactive,
+                in: RoundedRectangle(cornerRadius: 10)
+            )
         }
         .buttonStyle(.plain)
     }

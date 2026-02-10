@@ -237,7 +237,7 @@ struct MedicalConditionsView: View {
                         .foregroundStyle(.secondary)
 
                     TextField(L("conditions.detailsPlaceholder"), text: entry.details)
-                        .textFieldStyle(.roundedBorder)
+                        .glassField()
                 }
             }
         }
@@ -273,7 +273,13 @@ struct MedicalConditionsView: View {
 
                 Spacer()
             }
-            .contentShape(Rectangle())
+            .padding(10)
+            .glassBackground(
+                isSelected
+                    ? .interactiveTinted(Theme.accentBlue.opacity(0.15))
+                    : .interactive,
+                in: RoundedRectangle(cornerRadius: 10)
+            )
         }
         .buttonStyle(.plain)
     }

@@ -30,10 +30,10 @@ struct SettingsView: View {
                     }
                 }
             }
-            .onChange(of: selectedPhoto) { _, newValue in
-                Task {
-                    if let newValue,
-                       let data = try? await newValue.loadTransferable(type: Data.self) {
+            .onChange(of: selectedPhoto) { newValue in
+                guard let newValue else { return }
+                Task<Void, Never> {
+                    if let data = try? await newValue.loadTransferable(type: Data.self) {
                         settingsVM.updateLogo(data)
                     }
                 }

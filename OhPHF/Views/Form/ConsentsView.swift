@@ -69,10 +69,7 @@ struct ConsentsView: View {
                                 .foregroundStyle(.white)
                         }
                         .padding(32)
-                        .background(
-                            .ultraThinMaterial,
-                            in: RoundedRectangle(cornerRadius: Theme.cornerRadius)
-                        )
+                        .glassBackground(.regular, in: RoundedRectangle(cornerRadius: Theme.cornerRadius))
                     }
                     .transition(.opacity)
             }

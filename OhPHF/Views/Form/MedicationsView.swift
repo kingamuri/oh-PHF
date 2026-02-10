@@ -19,10 +19,10 @@ struct MedicationsView: View {
                         ) {
                             VStack(alignment: .leading, spacing: 12) {
                                 TextField(L("medications.doctorName"), text: medInfo.doctorName)
-                                    .textFieldStyle(.roundedBorder)
+                                    .glassField()
 
                                 TextField(L("medications.treatmentReason"), text: medInfo.treatmentReason)
-                                    .textFieldStyle(.roundedBorder)
+                                    .glassField()
                             }
                         }
                     }
@@ -44,14 +44,7 @@ struct MedicationsView: View {
                                         .frame(minHeight: 80)
                                         .scrollContentBackground(.hidden)
                                         .padding(8)
-                                        .background(
-                                            RoundedRectangle(cornerRadius: 8)
-                                                .fill(Color.white.opacity(0.5))
-                                        )
-                                        .overlay(
-                                            RoundedRectangle(cornerRadius: 8)
-                                                .stroke(Theme.softGray, lineWidth: 1)
-                                        )
+                                        .glassBackground(.regular, in: RoundedRectangle(cornerRadius: 8))
                                 }
 
                                 // Blood thinners sub-question

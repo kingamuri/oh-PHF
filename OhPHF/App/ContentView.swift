@@ -56,7 +56,7 @@ struct ContentView: View {
             Image(systemName: "checkmark.circle.fill")
                 .font(.system(size: 80))
                 .foregroundStyle(Theme.accentBlue)
-                .symbolEffect(.bounce, value: formVM.showThankYou)
+                .bounceEffectCompat(value: formVM.showThankYou)
 
             Text(L("thankYou.title"))
                 .font(Theme.titleFont)
@@ -72,5 +72,18 @@ struct ContentView: View {
             Spacer()
         }
         .frame(maxWidth: Theme.maxFormWidth)
+    }
+}
+
+// MARK: - Symbol Effect Compat
+
+private extension View {
+    @ViewBuilder
+    func bounceEffectCompat(value: Bool) -> some View {
+        if #available(iOS 17.0, *) {
+            self.symbolEffect(.bounce, value: value)
+        } else {
+            self
+        }
     }
 }

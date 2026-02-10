@@ -11,11 +11,7 @@ struct PDFArchiveView: View {
     var body: some View {
         Group {
             if entries.isEmpty {
-                ContentUnavailableView(
-                    L("no_pdfs"),
-                    systemImage: "doc.text.magnifyingglass",
-                    description: Text(L("no_pdfs_description"))
-                )
+                emptyStateView
             } else {
                 List {
                     ForEach(entries) { entry in
@@ -61,6 +57,32 @@ struct PDFArchiveView: View {
             }
         } message: {
             Text(L("delete_pdf_message"))
+        }
+    }
+
+    // MARK: - Empty State
+
+    @ViewBuilder
+    private var emptyStateView: some View {
+        if #available(iOS 17.0, *) {
+            ContentUnavailableView(
+                L("no_pdfs"),
+                systemImage: "doc.text.magnifyingglass",
+                description: Text(L("no_pdfs_description"))
+            )
+        } else {
+            VStack(spacing: 12) {
+                Image(systemName: "doc.text.magnifyingglass")
+                    .font(.system(size: 48))
+                    .foregroundStyle(.secondary)
+                Text(L("no_pdfs"))
+                    .font(Theme.headlineFont)
+                    .foregroundStyle(Theme.deepBlue)
+                Text(L("no_pdfs_description"))
+                    .font(Theme.captionFont)
+                    .foregroundStyle(.secondary)
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
     }
 

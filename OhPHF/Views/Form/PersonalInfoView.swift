@@ -58,11 +58,11 @@ struct PersonalInfoView: View {
 
                             // First Name
                             TextField(L("personal.firstName"), text: info.firstName)
-                                .textFieldStyle(.roundedBorder)
+                                .glassField()
 
                             // Last Name
                             TextField(L("personal.lastName"), text: info.lastName)
-                                .textFieldStyle(.roundedBorder)
+                                .glassField()
 
                             // Suffix Titles (after name)
                             VStack(alignment: .leading, spacing: 6) {
@@ -119,16 +119,16 @@ struct PersonalInfoView: View {
                                 .foregroundStyle(Theme.deepBlue)
 
                             TextField(L("personal.street"), text: info.street)
-                                .textFieldStyle(.roundedBorder)
+                                .glassField()
 
                             HStack(spacing: 12) {
                                 TextField(L("personal.postalCode"), text: info.postalCode)
-                                    .textFieldStyle(.roundedBorder)
+                                    .glassField()
                                     .keyboardType(.numberPad)
                                     .frame(maxWidth: 140)
 
                                 TextField(L("personal.city"), text: info.city)
-                                    .textFieldStyle(.roundedBorder)
+                                    .glassField()
                             }
 
                             HStack {
@@ -155,11 +155,11 @@ struct PersonalInfoView: View {
                                 .foregroundStyle(Theme.deepBlue)
 
                             TextField(L("personal.phone"), text: info.phone)
-                                .textFieldStyle(.roundedBorder)
+                                .glassField()
                                 .keyboardType(.phonePad)
 
                             TextField(L("personal.email"), text: info.email)
-                                .textFieldStyle(.roundedBorder)
+                                .glassField()
                                 .keyboardType(.emailAddress)
                                 .textInputAutocapitalization(.never)
                                 .autocorrectionDisabled()
@@ -188,7 +188,7 @@ struct PersonalInfoView: View {
                             }
 
                             TextField(L("personal.insuranceName"), text: info.insuranceName)
-                                .textFieldStyle(.roundedBorder)
+                                .glassField()
 
                             TextField(
                                 formVM.form.personalInfo.insuranceType == .public
@@ -196,7 +196,7 @@ struct PersonalInfoView: View {
                                     : L("personal.policyNumber"),
                                 text: info.insuranceNumber
                             )
-                            .textFieldStyle(.roundedBorder)
+                            .glassField()
                         }
                     }
 
@@ -208,7 +208,7 @@ struct PersonalInfoView: View {
                                 .foregroundStyle(Theme.deepBlue)
 
                             TextField(L("personal.profession"), text: info.profession)
-                                .textFieldStyle(.roundedBorder)
+                                .glassField()
                         }
                     }
 
@@ -220,10 +220,10 @@ struct PersonalInfoView: View {
                                 .foregroundStyle(Theme.deepBlue)
 
                             TextField(L("personal.emergencyName"), text: info.emergencyContactName)
-                                .textFieldStyle(.roundedBorder)
+                                .glassField()
 
                             TextField(L("personal.emergencyPhone"), text: info.emergencyContactPhone)
-                                .textFieldStyle(.roundedBorder)
+                                .glassField()
                                 .keyboardType(.phonePad)
                         }
                     }
@@ -277,12 +277,11 @@ struct PersonalInfoView: View {
                 .foregroundStyle(isSelected ? .white : Theme.deepBlue)
                 .padding(.horizontal, 12)
                 .padding(.vertical, 6)
-                .background(
-                    isSelected ? Theme.accentBlue : Color.clear,
+                .glassBackground(
+                    isSelected
+                        ? .interactiveTinted(Theme.accentBlue)
+                        : .interactive,
                     in: Capsule()
-                )
-                .overlay(
-                    Capsule().stroke(isSelected ? Theme.accentBlue : Theme.softGray, lineWidth: 1)
                 )
         }
         .buttonStyle(.plain)

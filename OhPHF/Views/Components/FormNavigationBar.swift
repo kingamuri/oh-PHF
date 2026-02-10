@@ -24,46 +24,37 @@ struct FormNavigationBar: View {
             )
 
             // Navigation buttons
-            HStack(spacing: 16) {
-                // Back button
-                if canGoBack {
-                    Button(action: onBack) {
-                        HStack(spacing: 6) {
-                            Image(systemName: "chevron.left")
-                            Text(L("back"))
+            CompatGlassContainer(spacing: 16) {
+                HStack(spacing: 16) {
+                    // Back button
+                    if canGoBack {
+                        Button(action: onBack) {
+                            HStack(spacing: 6) {
+                                Image(systemName: "chevron.left")
+                                Text(L("back"))
+                            }
+                            .font(Theme.bodyFont)
+                            .foregroundStyle(Theme.deepBlue)
+                            .padding(.horizontal, 20)
+                            .padding(.vertical, 12)
+                            .glassBackground(.interactive, in: Capsule())
                         }
-                        .font(Theme.bodyFont)
-                        .foregroundStyle(Theme.deepBlue)
-                        .padding(.horizontal, 20)
-                        .padding(.vertical, 12)
-                        .background(
-                            .ultraThinMaterial,
-                            in: Capsule()
-                        )
-                        .overlay(
-                            Capsule()
-                                .stroke(Theme.softGray, lineWidth: 1)
-                        )
+                        .buttonStyle(.plain)
                     }
-                    .buttonStyle(.plain)
-                }
 
-                Spacer()
+                    Spacer()
 
-                // Next or Submit button
-                if isLastPage {
-                    submitButton
-                } else {
-                    nextButton
+                    // Next or Submit button
+                    if isLastPage {
+                        submitButton
+                    } else {
+                        nextButton
+                    }
                 }
             }
         }
         .padding(Theme.cardPadding)
-        .background(
-            .ultraThinMaterial,
-            in: RoundedRectangle(cornerRadius: Theme.cornerRadius)
-        )
-        .shadow(color: .black.opacity(0.05), radius: 10, y: -2)
+        .glassBackground(.regular, in: RoundedRectangle(cornerRadius: Theme.cornerRadius))
     }
 
     // MARK: - Next Button
@@ -78,10 +69,7 @@ struct FormNavigationBar: View {
             .foregroundStyle(.white)
             .padding(.horizontal, 28)
             .padding(.vertical, 12)
-            .background(
-                Theme.accentBlue,
-                in: Capsule()
-            )
+            .glassBackground(.interactiveTinted(Theme.accentBlue), in: Capsule())
         }
         .buttonStyle(.plain)
     }
@@ -103,8 +91,8 @@ struct FormNavigationBar: View {
             .foregroundStyle(.white)
             .padding(.horizontal, 28)
             .padding(.vertical, 12)
-            .background(
-                isSubmitting ? Theme.accentBlue.opacity(0.6) : Theme.deepBlue,
+            .glassBackground(
+                .interactiveTinted(isSubmitting ? Theme.accentBlue.opacity(0.6) : Theme.deepBlue),
                 in: Capsule()
             )
         }

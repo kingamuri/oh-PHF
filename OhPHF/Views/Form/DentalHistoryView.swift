@@ -128,7 +128,7 @@ struct DentalHistoryView: View {
                                     L("dental.anesthesiaDetails"),
                                     text: info.anesthesiaComplicationDetails
                                 )
-                                .textFieldStyle(.roundedBorder)
+                                .glassField()
                             }
                         }
                     }
@@ -197,9 +197,11 @@ struct DentalHistoryView: View {
                 .foregroundStyle(Theme.deepBlue)
                 .fixedSize(horizontal: false, vertical: true)
 
-            HStack(spacing: 8) {
-                ForEach(0..<4, id: \.self) { value in
-                    bddOptionButton(questionIndex: index, value: value)
+            CompatGlassContainer(spacing: 8) {
+                HStack(spacing: 8) {
+                    ForEach(0..<4, id: \.self) { value in
+                        bddOptionButton(questionIndex: index, value: value)
+                    }
                 }
             }
         }
@@ -222,18 +224,11 @@ struct DentalHistoryView: View {
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 10)
                 .padding(.horizontal, 4)
-                .background(
+                .glassBackground(
                     isSelected
-                        ? AnyShapeStyle(Theme.accentBlue)
-                        : AnyShapeStyle(.ultraThinMaterial),
+                        ? .interactiveTinted(Theme.accentBlue)
+                        : .interactive,
                     in: RoundedRectangle(cornerRadius: 10)
-                )
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(
-                            isSelected ? Color.clear : Theme.softGray,
-                            lineWidth: 1
-                        )
                 )
         }
         .buttonStyle(.plain)
@@ -276,7 +271,13 @@ struct DentalHistoryView: View {
 
                 Spacer()
             }
-            .contentShape(Rectangle())
+            .padding(10)
+            .glassBackground(
+                isSelected
+                    ? .interactiveTinted(Theme.accentBlue.opacity(0.15))
+                    : .interactive,
+                in: RoundedRectangle(cornerRadius: 10)
+            )
         }
         .buttonStyle(.plain)
     }

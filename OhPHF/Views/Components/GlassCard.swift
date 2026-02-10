@@ -12,15 +12,7 @@ struct GlassCard<Content: View>: View {
     var body: some View {
         content
             .padding(Theme.cardPadding)
-            .background(
-                .ultraThinMaterial,
-                in: RoundedRectangle(cornerRadius: Theme.cornerRadius)
-            )
-            .overlay(
-                RoundedRectangle(cornerRadius: Theme.cornerRadius)
-                    .stroke(Color.white.opacity(0.3), lineWidth: 0.5)
-            )
-            .shadow(color: .black.opacity(0.05), radius: 10, y: 4)
+            .glassBackground(.regular, in: RoundedRectangle(cornerRadius: Theme.cornerRadius))
     }
 }
 

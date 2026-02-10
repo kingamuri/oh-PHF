@@ -26,8 +26,6 @@ enum Theme {
     static let cornerRadius: CGFloat = 16
     static let maxFormWidth: CGFloat = 700
 
-    // MARK: - Glass
-    static let glassTint = Color.blue.opacity(0.08)
 }
 
 extension Color {

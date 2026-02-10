@@ -40,6 +40,8 @@ struct PinEntryView: View {
                 .font(Theme.headlineFont)
                 .foregroundStyle(Theme.deepBlue)
         }
+        .padding(20)
+        .glassBackground(.regular, in: RoundedRectangle(cornerRadius: Theme.cornerRadius))
     }
 
     // MARK: - PIN Dots
@@ -57,6 +59,9 @@ struct PinEntryView: View {
                     .animation(.easeInOut(duration: 0.15), value: settingsVM.pinInput.count)
             }
         }
+        .padding(.horizontal, 24)
+        .padding(.vertical, 16)
+        .glassBackground(.regular, in: Capsule())
     }
 
     // MARK: - Error Message
@@ -74,34 +79,33 @@ struct PinEntryView: View {
     // MARK: - Number Pad
 
     private var numberPadSection: some View {
-        LazyVGrid(columns: columns, spacing: 16) {
-            ForEach(1...9, id: \.self) { digit in
-                numberButton("\(digit)") {
-                    appendDigit("\(digit)")
+        CompatGlassContainer(spacing: 16) {
+            LazyVGrid(columns: columns, spacing: 16) {
+                ForEach(1...9, id: \.self) { digit in
+                    numberButton("\(digit)") {
+                        appendDigit("\(digit)")
+                    }
                 }
-            }
 
-            // Empty space (bottom-left)
-            Color.clear
-                .frame(height: 64)
+                // Empty space (bottom-left)
+                Color.clear
+                    .frame(height: 64)
 
-            // Zero button (bottom-center)
-            numberButton("0") {
-                appendDigit("0")
-            }
+                // Zero button (bottom-center)
+                numberButton("0") {
+                    appendDigit("0")
+                }
 
-            // Delete button (bottom-right)
-            Button {
-                deleteLastDigit()
-            } label: {
-                Image(systemName: "delete.backward")
-                    .font(.title2)
-                    .foregroundStyle(Theme.deepBlue)
-                    .frame(width: 72, height: 64)
-                    .background(
-                        .ultraThinMaterial,
-                        in: RoundedRectangle(cornerRadius: 12)
-                    )
+                // Delete button (bottom-right)
+                Button {
+                    deleteLastDigit()
+                } label: {
+                    Image(systemName: "delete.backward")
+                        .font(.title2)
+                        .foregroundStyle(Theme.deepBlue)
+                        .frame(width: 72, height: 64)
+                        .glassBackground(.interactive, in: RoundedRectangle(cornerRadius: 12))
+                }
             }
         }
         .frame(maxWidth: 280)
@@ -130,10 +134,7 @@ struct PinEntryView: View {
                 .font(.system(size: 28, weight: .medium, design: .rounded))
                 .foregroundStyle(Theme.deepBlue)
                 .frame(width: 72, height: 64)
-                .background(
-                    .ultraThinMaterial,
-                    in: RoundedRectangle(cornerRadius: 12)
-                )
+                .glassBackground(.interactive, in: RoundedRectangle(cornerRadius: 12))
         }
     }
 

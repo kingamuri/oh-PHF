@@ -39,7 +39,7 @@ struct WelcomeView: View {
                             .foregroundStyle(Theme.deepBlue)
 
                         TextField(L("welcome.patientNumberPlaceholder"), text: $formVM.form.patientNumber)
-                            .textFieldStyle(.roundedBorder)
+                            .glassField()
                             .keyboardType(.default)
                     }
                 }
@@ -56,7 +56,7 @@ struct WelcomeView: View {
                         .foregroundStyle(.white)
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 16)
-                        .background(Theme.accentBlue, in: Capsule())
+                        .glassBackground(.interactiveTinted(Theme.accentBlue), in: Capsule())
                 }
                 .buttonStyle(.plain)
             }

@@ -6,9 +6,11 @@ struct LanguagePicker: View {
     @EnvironmentObject var localization: LocalizationManager
 
     var body: some View {
-        HStack(spacing: 10) {
-            ForEach(AppLanguage.allCases) { language in
-                languageButton(for: language)
+        CompatGlassContainer(spacing: 10) {
+            HStack(spacing: 10) {
+                ForEach(AppLanguage.allCases) { language in
+                    languageButton(for: language)
+                }
             }
         }
     }
@@ -34,18 +36,11 @@ struct LanguagePicker: View {
             .foregroundStyle(isSelected ? .white : Theme.deepBlue)
             .padding(.horizontal, 14)
             .padding(.vertical, 8)
-            .background(
+            .glassBackground(
                 isSelected
-                    ? AnyShapeStyle(Theme.accentBlue)
-                    : AnyShapeStyle(.ultraThinMaterial),
+                    ? .interactiveTinted(Theme.accentBlue)
+                    : .interactive,
                 in: Capsule()
-            )
-            .overlay(
-                Capsule()
-                    .stroke(
-                        isSelected ? Color.clear : Theme.softGray,
-                        lineWidth: 1
-                    )
             )
         }
         .buttonStyle(.plain)

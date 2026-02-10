@@ -35,8 +35,8 @@ enum AppLanguage: String, CaseIterable, Identifiable {
 final class LocalizationManager: ObservableObject {
     static let shared = LocalizationManager()
 
-    @AppStorage("appLanguage") var languageCode: String = "de" {
-        didSet { objectWillChange.send() }
+    @Published var languageCode: String = UserDefaults.standard.string(forKey: "appLanguage") ?? "de" {
+        didSet { UserDefaults.standard.set(languageCode, forKey: "appLanguage") }
     }
 
     var language: AppLanguage {

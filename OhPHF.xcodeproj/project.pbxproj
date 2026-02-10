@@ -28,6 +28,7 @@
 		70A8871BB6D12B930EB74D0D /* SignaturePadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D4832519F976DD71C72525 /* SignaturePadView.swift */; };
 		7792C289096C1EA7A28CAA26 /* LifestyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DC691F3700A94E0CE5D4B3 /* LifestyleView.swift */; };
 		7D7D4A65589B55770984076D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7F30A58F3E1BEF47C7A00A55 /* Localizable.strings */; };
+		827196A9E189100F2D631205 /* GlassCompat.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDAEBCA157C20137E116C146 /* GlassCompat.swift */; };
 		859131485AF410642A5D8A2F /* MedicalConditionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1611DDAD4DA20238E0FD4A7A /* MedicalConditionsView.swift */; };
 		891FF6837CA3268677F4C818 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A319E40229A029A849626F /* ProgressBarView.swift */; };
 		8A84C7417EC7A4A410B2DD49 /* MedicationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122CE56D7B41C30352C7C356 /* MedicationsView.swift */; };
@@ -41,6 +42,7 @@
 		D39D3AD9EBF3E3AED2AC0657 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3348744FC8DEB363ECB3477E /* Assets.xcassets */; };
 		E40CE6193F400363C0421693 /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6D9486F961978D5491AB3C /* FlowLayout.swift */; };
 		E4C2F8B612D567CEBCB6EDC5 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182822904C88DB2A398F9587 /* Theme.swift */; };
+		E9F916A491C9D0AEA13E5553 /* GlassTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7342AE055FC79A17CF1CA42F /* GlassTextFieldStyle.swift */; };
 		F16FB27EF7AC8D38E5EEB0D8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20036B99EF7BC6B03FCA3BB /* SettingsView.swift */; };
 		F2CC07CDDC68FA706A43CF00 /* BDDScorer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5705B74FF9A33EBB7C3304 /* BDDScorer.swift */; };
 /* End PBXBuildFile section */
@@ -67,6 +69,7 @@
 		68D4832519F976DD71C72525 /* SignaturePadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignaturePadView.swift; sourceTree = "<group>"; };
 		6B163FB5B1FC177D6170C067 /* ClinicSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClinicSettings.swift; sourceTree = "<group>"; };
 		6EEFDC3BDA188653973049F5 /* PersonalInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoView.swift; sourceTree = "<group>"; };
+		7342AE055FC79A17CF1CA42F /* GlassTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassTextFieldStyle.swift; sourceTree = "<group>"; };
 		7387074A1EE099158B724943 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		76A0391F8CC4F89F9368EBF1 /* LanguagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagePicker.swift; sourceTree = "<group>"; };
 		781E8E149A69FD14BE50CED9 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
@@ -86,6 +89,7 @@
 		F2429EDFC9B5685D192B39B8 /* SkyBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyBackground.swift; sourceTree = "<group>"; };
 		F97EF349B9339571406F203D /* PDFGeneratorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFGeneratorService.swift; sourceTree = "<group>"; };
 		FA398EEF4ACD06199B8FB23E /* EmailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailService.swift; sourceTree = "<group>"; };
+		FDAEBCA157C20137E116C146 /* GlassCompat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassCompat.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -96,6 +100,8 @@
 				4E6D9486F961978D5491AB3C /* FlowLayout.swift */,
 				33B55CCC787B076B7EA7B0D2 /* FormNavigationBar.swift */,
 				087B74B335F426659C2DBD5D /* GlassCard.swift */,
+				FDAEBCA157C20137E116C146 /* GlassCompat.swift */,
+				7342AE055FC79A17CF1CA42F /* GlassTextFieldStyle.swift */,
 				76A0391F8CC4F89F9368EBF1 /* LanguagePicker.swift */,
 				52A319E40229A029A849626F /* ProgressBarView.swift */,
 				68D4832519F976DD71C72525 /* SignaturePadView.swift */,
@@ -325,6 +331,8 @@
 				60B017A1843A72CD46EEA2D2 /* FormNavigationBar.swift in Sources */,
 				1899F779C94403633D0C3FF9 /* FormViewModel.swift in Sources */,
 				0FAEA3F80C264BFB24193821 /* GlassCard.swift in Sources */,
+				827196A9E189100F2D631205 /* GlassCompat.swift in Sources */,
+				E9F916A491C9D0AEA13E5553 /* GlassTextFieldStyle.swift in Sources */,
 				414950518F48EC6D64E7DB08 /* LanguagePicker.swift in Sources */,
 				7792C289096C1EA7A28CAA26 /* LifestyleView.swift in Sources */,
 				32B0E82F3374EB1E330D447D /* LocalizationManager.swift in Sources */,
@@ -418,7 +426,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -504,7 +512,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;

@@ -28,18 +28,20 @@ struct YesNoToggle<Content: View>: View {
                 .fixedSize(horizontal: false, vertical: true)
 
             // Yes / No pill buttons
-            HStack(spacing: 12) {
-                toggleButton(
-                    title: L("yes"),
-                    isSelected: isYes,
-                    action: { withAnimation(.easeInOut(duration: 0.3)) { isYes = true } }
-                )
+            CompatGlassContainer(spacing: 12) {
+                HStack(spacing: 12) {
+                    toggleButton(
+                        title: L("yes"),
+                        isSelected: isYes,
+                        action: { withAnimation(.easeInOut(duration: 0.3)) { isYes = true } }
+                    )
 
-                toggleButton(
-                    title: L("no"),
-                    isSelected: !isYes,
-                    action: { withAnimation(.easeInOut(duration: 0.3)) { isYes = false } }
-                )
+                    toggleButton(
+                        title: L("no"),
+                        isSelected: !isYes,
+                        action: { withAnimation(.easeInOut(duration: 0.3)) { isYes = false } }
+                    )
+                }
             }
 
             // Expandable subform
@@ -64,18 +66,11 @@ struct YesNoToggle<Content: View>: View {
                 .foregroundStyle(isSelected ? .white : Theme.deepBlue)
                 .padding(.horizontal, 24)
                 .padding(.vertical, 10)
-                .background(
+                .glassBackground(
                     isSelected
-                        ? AnyShapeStyle(Theme.accentBlue)
-                        : AnyShapeStyle(.ultraThinMaterial),
+                        ? .interactiveTinted(Theme.accentBlue)
+                        : .interactive,
                     in: Capsule()
-                )
-                .overlay(
-                    Capsule()
-                        .stroke(
-                            isSelected ? Color.clear : Theme.softGray,
-                            lineWidth: 1
-                        )
                 )
         }
         .buttonStyle(.plain)

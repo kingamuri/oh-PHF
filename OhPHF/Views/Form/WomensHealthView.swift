@@ -72,7 +72,7 @@ struct WomensHealthView: View {
                                     L("womensHealth.contraceptiveTypePlaceholder"),
                                     text: $formVM.form.womensHealthInfo.contraceptiveType
                                 )
-                                .textFieldStyle(.roundedBorder)
+                                .glassField()
                             }
                         }
                     }
